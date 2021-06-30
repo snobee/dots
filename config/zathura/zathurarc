@@ -1,49 +1,44 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
-set notification-error-bg       "#d78787" # Red
-set notification-error-fg       "#101010" # Foreground
-set notification-warning-bg     "#d7af5f" # Orange
-set notification-warning-fg     "#101010" # Selection
-set notification-bg             "#101010" # Background
+set notification-error-bg       "#d78787" # red
+set notification-error-fg       "#202020" # Foreground
+set notification-warning-bg     "#d7af5f" # orange
+set notification-warning-fg     "#202020" # Foreground
+set notification-bg             "#202020" # Background
 set notification-fg             "#eaeaea" # Foreground
 
-set completion-bg               "#101010" # Background
-set completion-fg               "#afafd7" # Comment
-set completion-group-bg         "#101010" # Background
-set completion-group-fg         "#afafd7" # Comment
-set completion-highlight-bg     "#101010" # Selection
+set completion-bg               "#202020" # Background
+set completion-fg               "#afafd7" # purple
+set completion-group-bg         "#202020" # Background
+set completion-group-fg         "#afafd7" # purple
+set completion-highlight-bg     "#202020" # Selection
 set completion-highlight-fg     "#eaeaea" # Foreground
 
-set index-bg                    "#101010" # Background
+set index-bg                    "#202020" # Background
 set index-fg                    "#eaeaea" # Foreground
-set index-active-bg             "#101010" # Current Line
+set index-active-bg             "#202020" # Current Line
 set index-active-fg             "#eaeaea" # Foreground
 
-set inputbar-bg                 "#101010" # Background
+set inputbar-bg                 "#202020" # Background
 set inputbar-fg                 "#eaeaea" # Foreground
-set statusbar-bg                "#101010" # Background
+set statusbar-bg                "#202020" # Background
 set statusbar-fg                "#eaeaea" # Foreground
 
-set highlight-color             "#afafd7" # Orange
-set highlight-active-color      "#d7afd7" # Pink
+set highlight-color             "#afafd7" # purple
+set highlight-active-color      "#d7afd7" # pink
 
-set default-bg                  "#101010" # Background
+set default-bg                  "#202020" # Background
 set default-fg                  "#eaeaea" # Foreground
 
 set render-loading              true
-set render-loading-fg           "#101010"  # Background
+set render-loading-fg           "#202020" # Background
 set render-loading-bg           "#eaeaea" # Foreground
 
-#
-# Recolor mode settings
-#
+set recolor-lightcolor          "#eaeaea" # Background
+set recolor-darkcolor           "#202020" # Foreground
 
-set recolor-lightcolor          "#101010" # Background
-set recolor-darkcolor           "#eaeaea" # Foreground
-
-#
-# Startup options
-#
-set adjust-open width
-set recolor true
+set guioptions                  ""        # remove statusbar
+set adjust-open                 width     # open sized to width
+set recolor                     true      # recolor page
+set recolor-keephue             true      # colour images
