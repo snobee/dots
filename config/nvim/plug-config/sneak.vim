@@ -1,9 +1,6 @@
 " case insensitive sneak
 let g:sneak#use_ic_scs = 1
 
-" pressing f/t/df again right away jumps to the next one
-let g:sneak#s_next = 1
-
 " ; takes you forward , takes you back
 let g:sneak#absolute_dir = 1
 
