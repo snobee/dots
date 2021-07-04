@@ -54,6 +54,7 @@ augroup commenting_blocks_of_code
     autocmd FileType conf,fstab,yaml                let b:comment_leader = '# '
     autocmd FileType tex                            let b:comment_leader = '% '
     autocmd FileType vim                            let b:comment_leader = '" '
+    autocmd FileType sql                            let b:comment_leader = '--'
 augroup END
 xnoremap <silent> <expr> <leader>/ ":norm I" . b:comment_leader . "<cr>"
 xnoremap <silent> <expr> <leader>? ":s/" . escape(b:comment_leader, '\/') . "//e<cr>:noh<cr>"
