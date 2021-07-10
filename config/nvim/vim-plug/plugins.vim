@@ -34,5 +34,5 @@ call plug#begin('~/.config/nvim/vim-plug')   " directory for plugins
     Plug 'justinmk/vim-sneak'
 
     " show colours
-    Plug 'gko/vim-coloresque'
+    Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end()

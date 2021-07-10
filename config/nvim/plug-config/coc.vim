@@ -25,6 +25,3 @@ let g:coc_global_extensions = [
   \ 'coc-texlab',
   \ 'coc-marketplace',
   \ ]
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
