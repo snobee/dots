@@ -33,6 +33,7 @@ set nu rnu                              " enable hybrid line numbers
 set ignorecase                          " searches will be case insensitive
 set smartcase                           " searches will be case insensitive unless uppercases are present
 set conceallevel=2                      " allow plugins to represent text with something else
+set virtualedit=all                     " move the cursor past the EOL
 
 let &shell=get({
     \ '/bin/zsh':  '/usr/bin/env zsh -i',
