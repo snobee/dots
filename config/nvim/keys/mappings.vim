@@ -6,6 +6,17 @@ inoremap kl <esc>
 inoremap LK <esc>|                                  " or K+L
 inoremap KL <esc>
 
+vmap <silent> <Up> gk|                              " move through soft wrapped lines
+vmap <silent> k gk
+vmap <silent> <Down> gj
+vmap <silent> j gj
+nmap <silent> <Up> gk
+nmap <silent> k gk
+nmap <silent> <Down> gj
+nmap <silent> j gj
+imap <silent> <Up> <C-o>gk
+imap <silent> <Down> <C-o>gj
+
 nnoremap <silent> <leader>s :w<cr>|                 " different saving yay
 nnoremap <silent> <tab> :bn<cr>|                    " tab/TAB in normal to switch buffers
 nnoremap <silent> <s-tab> :bp<cr>
