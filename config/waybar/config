@@ -17,7 +17,7 @@
         "format-icons": {
             "urgent": "",
             "focused": "",
-            "default": ""
+            "default": ""
         }
     },
     "clock": {
@@ -30,7 +30,7 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""],
+        "format-icons": ["", "", "", ""],
         "on-scroll-up": "light -A 1",
         "on-scroll-down": "light -U 1",
         "on-click": "zenity --title='Adjust Brightness' --scale --text=Brightness --value=$(light -G | sed -r 's/\\.[0-9]+//') --print-partial | while read line; do light -S $line; done",
@@ -41,7 +41,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
         "tooltip" : false,
     },
     "temperature": {
@@ -53,9 +53,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "None ⚠",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "None 睊",
         "interval": 3,
         "on-click": "kitty iwctl"
     },
@@ -74,7 +74,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["奄", "奔", "墳"]
         },
         "on-click": "zenity --title='Adjust Volume' --scale --text=Volume --value=$(pulseaudio-ctl full-status| sed -r 's/ .*//') --print-partial | while read line; do pulseaudio-ctl set $line; done"
     },
@@ -84,10 +84,10 @@
     },
     "custom/rotate": {
         "format": "↻",
-        "on-click": "rotate_screen.sh -r 90"
+        "on-click": "rotate_screen.py -r 90"
     },
     "custom/quit": {
-        "format": "✕",
+        "format": "",
         "on-click": "swaymsg kill",
     },
     "custom/music": {
@@ -98,14 +98,14 @@
         },
         "max-length": 35,
         "interval": 1,
-        "exec": "lollypop_cli.sh -f '{{\"text\": \"{title} - {artist}\", \"alt\": \"{status}\", \"tooltip\": \"{album} - {albumArtist} at {volume}\"}}'",
-        "exec-if": "lollypop_cli.sh -e",
+        "exec": "lollypop_cli.py -f '{{\"text\": \"{title} - {artist}\", \"alt\": \"{status}\", \"tooltip\": \"{album} - {albumArtist} at {volume}\"}}'",
+        "exec-if": "lollypop_cli.py -e",
         "return-type": "json",
         "exec-on-event": false,
         "on-click": "lollypop -t",
         "on-click-right": "lollypop -n",
         "on-click-middle": "lollypop -p",
-        "on-scroll-up": "lollypop_cli.sh -v add 0.01",
-        "on-scroll-down": "lollypop_cli.sh -v remove 0.01",
+        "on-scroll-up": "lollypop_cli.py -v add 0.01",
+        "on-scroll-down": "lollypop_cli.py -v remove 0.01",
     },
 }
