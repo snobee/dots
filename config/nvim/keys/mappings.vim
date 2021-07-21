@@ -5,6 +5,7 @@ inoremap lk <esc>|                                  " exit insert mode with k+l
 inoremap kl <esc>
 inoremap LK <esc>|                                  " or K+L
 inoremap KL <esc>
+tnoremap <Esc> <C-\><C-n>                           " escape terminal with <esc>
 
 vmap <silent> <Up> gk|                              " move through soft wrapped lines
 vmap <silent> k gk
