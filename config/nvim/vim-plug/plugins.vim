@@ -9,20 +9,22 @@ endif
 call plug#begin('~/.config/nvim/vim-plug')   " directory for plugins
     " better statusline
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
 
-    " compiling latex etc.   
+    " compiling latex etc.
     Plug 'lervag/vimtex'
 
+    " markdown
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'vim-pandoc/vim-pandoc-syntax'
+
     " snips plugin for tab completion
-    Plug 'sirver/ultisnips'      
+    Plug 'sirver/ultisnips'
 
     " Supertab
     Plug 'ervandew/supertab'
 
     " autocompletion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'ycm-core/YouCompleteMe'
 
     " colorscheme
     Plug 'sainnhe/gruvbox-material', { 'branch': 'master' }
@@ -35,4 +37,7 @@ call plug#begin('~/.config/nvim/vim-plug')   " directory for plugins
 
     " show colours
     Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+    " centred writing
+    Plug 'junegunn/goyo.vim'
 call plug#end()
