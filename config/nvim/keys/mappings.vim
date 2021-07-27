@@ -18,6 +18,9 @@ nmap <silent> j gj
 imap <silent> <Up> <C-o>gk
 imap <silent> <Down> <C-o>gj
 
+nnoremap <leader><leader> [s1z=`]|                  " correct last spelling mistake
+nnoremap <leader>z [sz|                             " jump to last spelling mistake and start correction
+
 nnoremap <silent> <leader>s :w<cr>|                 " different saving yay
 nnoremap <silent> <tab> :bn<cr>|                    " tab/TAB in normal to switch buffers
 nnoremap <silent> <s-tab> :bp<cr>
