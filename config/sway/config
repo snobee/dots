@@ -168,7 +168,7 @@ mode "$mode_power" {
     bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
-    bindsym e swaymsg exit
+    bindsym e exit
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
