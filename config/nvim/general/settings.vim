@@ -1,5 +1,5 @@
 filetype indent plugin on
-syntax on                               " Enables syntax highlighing
+syntax on                               " Enables syntax highlighting
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set wrap                                " wrap text around the edge of the screen
 set linebreak                           " text will not wrap inside a word
@@ -23,7 +23,6 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set tabstop=4                           " Tabs equate to 4 spaces
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set updatetime=300                      " Faster completion
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set ruler                               " Show the cursor position all the time
@@ -39,6 +38,10 @@ let &shell=get({
     \ '/bin/zsh':  '/usr/bin/env zsh -i',
     \ '/bin/bash': '/usr/bin/env bash -i'},
     \ $SHELL, '/usr/bin/env/bash -i')   " start shell in interactive mode
+
+" shorten timeoutlen in insert mode
+autocmd InsertEnter * set timeoutlen=100
+autocmd InsertLeave * set timeoutlen=300
 
 " open help in new buffer
 au BufEnter * if &filetype == 'help' | :set buflisted | :only | endif
