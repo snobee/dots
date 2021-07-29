@@ -1,0 +1,43 @@
+global !p
+from latex import *
+endglobal
+
+snippet "(?<!\\not)inn" "in symbol" "math()" eirA
+\\in
+endsnippet
+
+snippet notin "not in symbol" "math()" eiA
+\\notin
+endsnippet
+
+snippet "(?<!\\big)(?<!\\)(cap|cup)" "cup and cap" "math()" eirA
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+snippet "C(ap|up)" "cup and cap" "math()" eirA
+\\bigc`!p snip.rv = match.group(1)`
+endsnippet
+
+snippet "(!|\|)->" "maps to" "math()" eirA
+\\mapsto
+endsnippet
+
+snippet cc "subset" "math()" eiA
+\\subset
+endsnippet
+
+snippet Cc "subset equal" "math()" eiA
+\\subseteq
+endsnippet
+
+snippet \\\ "set difference" "math()" eiA
+\\setminus
+endsnippet
+
+snippet "(?<![,\.])00" "emptyset" "math() and not aftermath(snip,2)" eirA
+\\emptyset
+endsnippet
+
+snippet "(N|Z|Q|R|C|H|O|S|F)\1" "standard sets" "math()" eirA
+\\mathbb{`!p snip.rv = match.group(1)`}
+endsnippet

@@ -11,3 +11,4 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/sneak.vim
 source $HOME/.config/nvim/plug-config/gruvbox-material.vim
 source $HOME/.config/nvim/plug-config/hexokinase.vim
+source $HOME/.config/nvim/plug-config/vim-pandoc.vim

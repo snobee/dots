@@ -25,3 +25,7 @@ let g:coc_global_extensions = [
   \ 'coc-texlab',
   \ 'coc-marketplace',
   \ ]
+
+let g:coc_filetype_map = {
+    \ 'pandoc': 'markdown',
+    \ }

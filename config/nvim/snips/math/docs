@@ -1,0 +1,158 @@
+# Latex Snippets
+#   Options
+#       i - in work expansion
+#       w - word boundary
+#       b - beginning of a line
+#       A - auto expand
+#       e - custom context
+#       m - only in math mode
+#       n - not in math mode
+#       v - exclusive to visual mode
+#       * - append an * to remove numbering
+#
+#   snippets
+#       command     options description
+#
+#   environments
+#       beg         *       enter  a new environment
+#       equ                 enter  an equation environment
+#       ali         wn*     enter  an align environment
+#       spl         iAm     enter  a split environment
+#       mult        iAm     enter  a multline environment
+#       case        iAm     enter  a cases environment
+#       tt          iAm     start  text
+#
+#   symbols
+#       ~~          iAm     insert tilde
+#       '           iAm     insert prime symbol
+#       oo          iAm     insert infinity symbol
+#       nab         iAm     insert nabla
+#       par         iAm     insert partial derivative
+#       deg         iAm     insert degree symbol
+#       hat         iAm     wrap   haracter or symbol in \hat
+#       bar         iAm     wrap   haracter or symbol in \bar
+#       vec         iAm     wrap   haracter or symbol in \vec
+#       l..         iAm     insert lower dots
+#       c..         iAm     insert centred dots
+#       v..         iAm     insert vertical dots
+#       d..         iAm     insert diagonal dots
+#       ??          im      insert a space
+#        `-> expands on 1-5 spaces in a row
+#       ??          iAm     insert a greek letter
+#        `-> expands on any greek letter ie. 'alpha', 'pi', 'Pi'
+#
+#   algebra
+#       +-          iAm     insert +- symbol
+#       -=          iAm     insert -+ symbol
+#       !=          iAm     insert not equals symbol
+#       ~=          iAm     insert approximately equal symbol
+#       <=          iAm     insert less than or equal to symbol
+#       >=          iAm     insert greater than or equal to symbol
+#       ==          iAe     start  aligned equality (in 'align', 'aligned', or 'split')
+#       ??          iA      start  brackets
+#       `-> expands on empty brackets and puts the cursur in the middle
+#       lr          im      start  unspecified auto sized brackets
+#       ??          iAm     start  auto sized brackets
+#        `-> expands on 'lr' followed by an opening bracket or:
+#           - p for parenthesis '()'
+#           - b for brackets '[]'
+#           - B for Braces '{}'
+#           - a for angled brackets '<>'
+#           - v for vertical bars '||'
+#           - V for vertical bars (double) '||<item>||'
+#
+#   operators
+#       **          iAm     insert multiply dot
+#       xx          iAm     insert times symbol
+#       /           iAmv    start  fraction from visual selection
+#       //          iAm     start  fraction
+#       ??          wAm     wrap   math in fraction
+#        `-> expands on anything matching the following
+#           1. (<anything>)/
+#           2. <symbol><0 or more subscripts, superscripts, and {}s>/
+#           3. <number><symbol><0 or more subscripts, superscripts, and {}s>/
+#           4. <number><0 or more subscripts, superscripts, and {}s>/
+#       ss          iAm     start  superscript
+#       dd          iAm     start  subscript
+#       ??          iAm     insert automatic subscript
+#        `-> expands on two of the same digit after math
+#       sq          iAm     insert squared operator
+#       cb          iAm     insert cubed operator
+#       inv         iAm     insert inverse operator
+#       sr          iAm     start  square root
+#       cr          iAm     start  cube root
+#       bow         iAm     insert bowtie
+#       ln          iAm     start  natural logarithm
+#       log         iAm     start  logarithm
+#       exp         iAm     insert exponential
+#       det         iAm     insert determinant
+#       dim         iAm     insert dimension
+#       ker         iAm     insert kernel
+#       gcd         iAm     insert greatest common denominator
+#       sup         iAm     insert supremum
+#       max         iAm     insert max
+#       min         iAm     insert min
+#       ceil        iAm     start  ceiling
+#       floor       iAm     start  floor
+#       eval        iAm     start  expresion evaluated at
+#       ??          iAm     start  trig function
+#        `-> expands on any shortened trig function ie. 'sin', 'tan', 'csc'
+#       ??          iAm     start  inverse trig function
+#        `-> expands on an 'a' follow by any shortened trig function
+#       ??          iAm     start hyper trig function
+#        `-> expands on an 'h' follow by any shortened trig function
+#       sum         iAm     start  sum
+#       prod        iAm     start  product
+#       lim         iAm     start  limit
+#       lis         iAm     start  limsup
+#       ??          iAm     start  integral
+#        `-> expands on 1-4 'i's followed by 'nt'
+#
+#   logic
+#       AA          iAm     insert forall symbol
+#       EE          iAm     insert exists symbol
+#       nEE         iAm     insert does not exist symbol
+#       iff         iAm     insert if and only if symbol
+#       =>          iAm     insert implies symbol
+#       =<          iAm     insert implied by symbol
+#       ->          iAm     insert right arrow
+#       -<          iAm     insert left arrow
+#       <->         iAm     insert left right arrow
+#       AND         iAm     insert and symbol
+#       OR          iAm     insert or symbol
+#       NOT         iAm     insert negation symbol
+#
+#   sets
+#       inn         iAm     insert in symbol
+#       notin       iAm     insert not in symbol
+#       cap         iAm     insert cap symbol
+#       Cap         iAm     insert big cap symbol
+#       cup         iAm     insert cup symbol
+#       Cup         iAm     insert big cup symbol
+#       |->         iAm     insert maps to symbol
+#       !->         iAm     insert maps to symbol
+#       cc          iAm     insert subset symbol
+#       Cc          iAm     insert subset equal symbol
+#       \\\         iAm     insert set difference symbol
+#       00          iAm     insert emptyset symbol
+#       ??          iAm     insert standard set of numbers
+#        `-> expands on two of the same capital letter if it defines a set
+#            ie. NN -> \mathbb{N}, ZZ -> \mathbb{Z}
+#
+#   matrices
+#       ??          Am      start  matrix
+#        `-> expands on "M<type><columns>*<rows> "
+#            where <type> is a combination of:
+#               - s for small
+#               - a for augmented '[|]'
+#               - p for parenthesis '()'
+#               - b for brackets '[]'
+#               - B for Braces '{}'
+#               - v for vertical bars '|<matrix>|'
+#               - V for vertical bars (double) '||<matrix>||'
+#           'a' and 's' are mutually exclusive (uses 'a') and,
+#           'p','b','B','v', and 'V' are as well (uses the first)
+#       ??          Am      start  vector
+#        `-> expands on "V<type><rows> "
+#       ??          Am      start  identity matrix
+#        `-> expands on "I<size> "

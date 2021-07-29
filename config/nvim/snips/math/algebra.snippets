@@ -1,0 +1,63 @@
+global !p
+from latex import *
+endglobal
+
+snippet +- "plus minus" "math()" eiA
+\\pm
+endsnippet
+
+snippet -+ "plus minus" "math()" eiA
+\\mp
+endsnippet
+
+snippet != "not equals" "math()" eiA
+\\neq
+endsnippet
+
+snippet ~= "approximately equal" "math()" eiA
+\\approx
+endsnippet
+
+snippet <= "less than or equal" "math()" eiA
+\\le
+endsnippet
+
+snippet >= "greater than or equal" "math()" eiA
+\\ge
+endsnippet
+
+snippet == "aligned equals" "env('align') or env('aligned') or env('split')" eiA
+&= ${VISUAL}$1 \\\\
+endsnippet
+
+snippet "(\(\)|\{\}|\[\]|<>|\|\|)" "empty brackets" irA
+`!p snip.rv = match.group(1)[0]`${VISUAL}$1`!p snip.rv = match.group(1)[1]`
+endsnippet
+
+snippet lr "\left? \right?" "math()" ei
+\\left$1${VISUAL}$2\\right$3
+endsnippet
+
+snippet "lrp|lr\(" "left( right)" "math()" eirA
+\\left(${VISUAL}$1\\right)
+endsnippet
+
+snippet "lrb|lr\[" "\left[ \right[" "math()" eirA
+\\left[${VISUAL}$1\\right]
+endsnippet
+
+snippet "lrB|lr\{" "\left{ \right{" "math()" eirA
+\\left\\{${VISUAL}$1\\right\\}
+endsnippet
+
+snippet "lra|lr<" "\left< \right>" "math()" eirA
+\\left<${VISUAL}$1\\right>
+endsnippet
+
+snippet "lrv|lr\|" "\left| \right|" "math()" eirA
+\\left\\lvert${VISUAL}$1\\right\\rvert
+endsnippet
+
+snippet lrV "\left|| \right||" "math()" eiA
+\\left\\lVert${VISUAL}$1\\right\\rVert
+endsnippet

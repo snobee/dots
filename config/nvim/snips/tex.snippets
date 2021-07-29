@@ -1,4 +1,4 @@
-# Latex Snippets
+# Tex Snippets
 #   Options
 #       i - in work expansion
 #       w - word boundary
@@ -8,190 +8,50 @@
 #       m - only in math mode
 #       n - not in math mode
 #       v - exclusive to visual mode
-#       * - append an * to remove auto numbering
+#       * - append an * to remove numbering
 #
 #   snippets
-#       command		options description
+#       command     options description
 #
-#   latex
-#       sec         w*      start  a new section
-#       ??  		w* 		start  a new subsection
+#   math
+#       ??          ?       ?
+#        `-> sources all the snippets from 'math'
+#
+#   tex
+#       temp        bn      open   the default template
+#       sec         wn*     start  a new section
+#       ??          wn*     start  a new subsection
 #        `-> expands on 'sub' preceded by any number of 's's
 #            each aditional 's' will increase the level of subsection
-#       tit         b       start  a title
-#       it 			w 		start  italics
-#       bf 			w 		start  boldface
-#       un 			w 		start  underline
-#       jj 			An   	start  inline math mode
-#       kk 			An   	start  multiline math mode
-#       tt 			iAm 	start  text
-#       ii 			bAe 	insert item (in 'enumerate' or 'itemize)
-#       hh 			wA 		insert space
-#       == 			iAe  	start  aligned equality (in 'align' or 'split')
+#       item        wn      enter  an itemize environment
+#       enum        wn      enter  an enumitem environment
+#       cen         wn      enter  a  center environment
+#       verb        wn      enter  a  verbatim environment
+#       code        wn      enter  an lstlisting environment
+#       i           wn      start  italics
+#       b           wn      start  boldface
+#       u           wn      start  underline
+#       jj          iAn     start  inline math mode
+#       kk          iAn     start  centred math mode
+#       ii          bAe     insert item (in 'enumerate' or 'itemize)
+#       ~ i         in      insert tilde
 #       \\[         iA      start  spaced newline
-#       / 			iAmv 	start  fraction from visual selection
-#       // 			iAm 	start  fraction
-#       ??          wAm 	wrap   math in fraction
-#        `-> expands on anything matching the following
-#           1. (<anything>)/
-#           2. <symbol><0 or more subscripts, superscripts, and {}s>/
-#           3. <number><symbol><0 or more subscripts, superscripts, and {}s>/
-#           4. <number><0 or more subscripts, superscripts, and {}s>/
-#
-#   environments
-#       temp 		b 		open   the default template
-#       beg 		w* 		enter  a  new environment
-#       item 		w 		enter  an itemize environment
-#       enum 		w 		enter  an enumitem environment
-#       spl 		w*n		enter  an equation/split environment
-#       spl 		iAm 	enter  a  split environment
-#       equ 		w* 		enter  an equation environment
-#       ali 		w* 		enter  an align environment
-#       cen 		w 		enter  a  center environment
-#       verb 		w 		enter  a  verbatim environment
-#       list        w       enter  an lstlisting environment
-#
-#   symbols
-#       ~ 			in 		insert tilde
-#       ~~ 			iAm 	insert tilde
-#       '           iAm     insert prime symbol
-#       oo 			iAm 	insert infinity symbol
-#       nab 		iAm 	insert nabla
-#       par 		iAm 	insert partial derivative
-#       deg 		iAm 	insert degree symbol
-#       hat 		iAm 	wrap   haracter or symbol in \hat
-#       bar 		iAm 	wrap   haracter or symbol in \bar
-#       vec 		iAm 	wrap   haracter or symbol in \vec
-#       l.. 		iAm 	insert lower dots
-#       c.. 		iAm 	insert centred dots
-#       v.. 		iAm 	insert vertical dots
-#       d.. 		iAm 	insert diagonal dots
-#       ??          iAm 	insert a greek letter
-#        `-> expands on any greek letter ie. 'alpha', 'pi', 'Pi'
-#
-#   algebra
-#       +- 			iAm 	insert +- symbol
-#       -= 			iAm 	insert -+ symbol
-#       != 			iAm 	insert not equals symbol
-#       ~= 			iAm 	insert approximately equal symbol
-#       <= 			iAm 	insert less than or equal to symbol
-#       >= 			iAm 	insert greater than or equal to symbol
-#       ??          iA      start  brackets
-#        `-> expands on empty brackets and puts the cursur in the middle
-#       lr          im      start  unspecified auto sized brackets
-#       ??          iAm     start  auto sized brackets
-#        `-> expands on 'lr' followed by an opening bracket or:
-#           - p for parenthesis '()'
-#           - b for brackets '[]'
-#           - B for Braces '{}'
-#           - a for angled brackets '<>'
-#           - v for vertical bars '||'
-#           - V for vertical bars (double) '||<item>||'
-#
-#   operator
-#       ** 			iAm 	insert multiply dot
-#       xx 			iAm 	insert times symbol
-#       ss 			iAm 	start  superscript
-#       dd 			iAm 	start  subscript
-#       ??          iAm 	insert automatic subscript
-#        `-> expands on two of the same digit after math
-#       sq 			iAm 	insert squared operator
-#       cb 			iAm 	insert cubed operator
-#       inv 		iAm 	insert inverse operator
-#       sr 			iAm 	start  square root
-#       cr 			iAm 	start  cube root
-#       bow         iAm     insert bowtie
-#       lap         iAm     insert laplacian
-#       ln 			iAm 	start  natural logarithm
-#       log 		iAm 	start  logarithm
-#       exp 		iAm 	insert exponential
-#       det 		iAm 	insert determinant
-#       dim 		iAm 	insert dimension
-#       ker         iAm     insert kernel
-#       gcd 		iAm 	insert greatest common denominator
-#       sup         iAm     insert supremum
-#       max 		iAm 	insert max
-#       min 		iAm 	insert min
-#       ceil 		iAm 	start  ceiling
-#       floor 		iAm 	start  floor
-#       eval 		iAm 	start  expresion evaluated at
-#       ??          iAm 	start  trig function
-#        `-> expands on any shortened trig function ie. 'sin', 'tan', 'csc'
-#       ??          iAm 	start  inverse trig function
-#        `-> expands on an 'a' follow by any shortened trig function
-#       ??          iAm 	start hyper trig function
-#        `-> expands on an 'h' follow by any shortened trig function
-#       sum 		iAm 	start  sum
-#       prod 		iAm 	start  product
-#       lim 		iAm 	start  limit
-#       lis 		iAm 	start  limsup
-#       ??          iAm 	start  integral
-#        `-> expands on 1-4 'i's followed by 'nt'
-#
-#   logic
-#       AA 			iAm 	insert forall symbol
-#       EE 			iAm 	insert exists symbol
-#       nEE 		iAm 	insert does not exist symbol
-#       iff 		iAm 	insert if and only if symbol
-#       => 			iAm 	insert implies symbol
-#       =< 			iAm 	insert implied by symbol
-#       -> 			iAm 	insert right arrow
-#       -< 			iAm 	insert left arrow
-#       <-> 		iAm 	insert left right arrow
-#       AND 		iAm 	insert and symbol
-#       OR 			iAm 	insert or symbol
-#       NOT 		iAm 	insert negation symbol
-#
-#   sets
-#       inn 		iAm 	insert in symbol
-#       notin 		iAm 	insert not in symbol
-#       cap 		iAm 	insert cap symbol
-#       Cap 		iAm 	insert big cap symbol
-#       cup 		iAm 	insert cup symbol
-#       Cup 		iAm 	insert big cup symbol
-#       |-> 		iAm 	insert maps to symbol
-#       !-> 		iAm 	insert maps to symbol
-#       cc 			iAm 	insert subset symbol
-#       Cc 			iAm 	insert subset equal symbol
-#       \\\ 		iAm 	insert set difference symbol
-#       00 			iAm 	insert emptyset symbol
-#       ??          iAm     insert standard set of numbers
-#        `-> expands on two of the same capital letter if it defines a set
-#            ie. NN -> \mathbb{N}, ZZ -> \mathbb{Z}
-#
-#   matrices
-#       ??          wAm 	start  matrix
-#        `-> expands on "M<type><columns>*<rows> "
-#            where <type> is a combination of:
-#               - s for small
-#               - a for augmented '[|]'
-#               - p for parenthesis '()'
-#               - b for brackets '[]'
-#               - B for Braces '{}'
-#               - v for vertical bars '||'
-#               - V for vertical bars (double) '||<matrix>||'
-#           'a' and 's' are mutually exclusive (drops 's') and,
-#           'p','b','B','v', and 'V' are as well (drops all but the first)
-#       ??          wAm 	start  vector
-#        `-> expands on "V<type><rows> "
-#       ??          wAm 	start  identity matrix
-#        `-> expands on "I<size> "
 #
 #   figures and tables
-#       ref 		w 		create a reference
+#       ref         w       create a reference
 #       fig         b       enter  figure environment
-#       tab 		b 		enter  table environment
-#       ??          iA 		enter  table environment
+#       tab         b       enter  table environment
+#       ??          iA      enter  table environment
 #        `-> expands on "tab<format> " where format includes 'l', 'c', 'r', or '|'
 #       sub         bAe     enter  subfigure environment (in 'figure' or 'table')
 #       mini        bAe     enter  minipage environment (in 'figure' or 'table')
 #       cc          bAe     create caption (in 'figure' or 'table')
-#       ll 			bAe 	create label (in 'figure' or 'table')
+#       ll          bAe     create label (in 'figure' or 'table')
 #       gg          bAe     insert graphic (in 'figure')
-#       rr 			bAe 	create row (in 'tabular')
-#       mid 		bAe 	insert midline (in 'tabular')
-#       cmid  		wAe 	create cmid rule (in 'tabular')
-#       multi 		wAe 	create multiline (in 'tabular')
+#       rr          bAe     create row (in 'tabular')
+#       mid         bAe     insert midline (in 'tabular')
+#       cmid        wAe     create cmid rule (in 'tabular')
+#       multi       wAe     create multiline (in 'tabular')
 #
 #   tikz
 #       tz          b       enter  tikz environment
@@ -204,139 +64,18 @@
 #       fd          bAe     start  new filldraw (in 'tikzpicture')
 
 global !p
-# http://vimdoc.sourceforge.net/htmldoc/if_pyth.html#python-vim
-# http://vimdoc.sourceforge.net/htmldoc/eval.html#synstack()
-def math():
-	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
-
-def comment():
-	return vim.eval('vimtex#syntax#in_comment()') == '1'
-
-def env(name):
-	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')")
-	return x != '0' and y != '0'
+from latex import *
 
 def fix_indent():
 	vim.eval('feedkeys("\<c-d>")')
-
-def aftermath(snip, length):
-	line = snip.buffer[snip.line]
-	start = snip.column - length + 1
-	if re.match('[A-Za-z\d\)\}]', line[start-1:start]):
-		return True
-	return False
-
-def after(snip, length, words):
-	line = snip.buffer[snip.line]
-	start = snip.column - length + 1
-	for word in words:
-		if word == line[start-len(word): start]:
-			return True
-	return False
-
-def before(snip, words):
-	line = snip.buffer[snip.line]
-	for word in words:
-		if word == line[snip.column:snip.column+len(word)]:
-			return True
-	return False
 endglobal
 
-# latex
-# ------------------------------------------------------------------------------
-snippet "sec(\*?)" "sections" wr
-\\section`!p snip.rv = match.group(1)`{${VISUAL}$1}
-$0
-endsnippet
+extends math
 
-snippet "(s*)sub(\*?)" "subsection" "not env('figure')" ewr
-\\`!p snip.rv = ('sub'*(len(match.group(1))) if match.group(1) else '') + 'subsection' + match.group(2)`{${VISUAL}$1}
-$0
-endsnippet
-
-snippet tit "title" b
-\\title{$1}
-endsnippet
-
-snippet it "italics" w
-\\textit{${VISUAL}$1}
-endsnippet
-
-snippet bf "bold face" w
-\\textbf{${VISUAL}$1}
-endsnippet
-
-snippet un "underline" w
-\\underline{${VISUAL}$1}
-endsnippet
-
-snippet jj "enter math mode $$" "not math()" eiA
-\$${VISUAL}$1\$
-endsnippet
-
-snippet kk "enter big math mode" "not math()" eiA
-\\[${VISUAL}$0\\]
-endsnippet
-
-snippet tt "text mode" "math()" eiA
-\\text{${VISUAL}$1}
-endsnippet
-
-post_expand "fix_indent()"
-snippet ii "item" "env('enumerate') or env('itemize')" ebA
-\\item ${VISUAL}
-endsnippet
-
-snippet hh "hspace" wA
-\\hspace{$1${2:pt}}
-endsnippet
-
-snippet == "aligned equals" "env('align') or env('split')" eiA
-&= ${VISUAL}$1 \\\\
-endsnippet
-
-snippet \\[ "spaced newline" iA
-\\\\[$1${2:pt}]
-endsnippet
-
-snippet / "Fraction" "math() and snip.visual_mode" eiA
-\\frac{${VISUAL}}{$1}
-endsnippet
-
-snippet // "Fraction" "math()" eiA
-\\frac{$1}{$2}
-endsnippet
-
-priority 1
-snippet '((\d+\.)?\d+((\^|_)?(\{[A-Za-z\d]+\}|\{\([A-Za-z\d]+\)\}|[A-Za-z\d]))*)/' "number frac" "math() and not snip.visual_mode" ewrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}
-endsnippet
-
-priority 2
-snippet '(((\d+\.)?\d+)?\\?[A-Za-z]+((\^|_)?(\{[A-Za-z\d]+\}|\{\([A-Za-z\d]+\)\}|[A-Za-z\d]))*)/' "symbol frac" "math() and not snip.visual_mode" ewrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}
-endsnippet
-
-priority 3
-snippet '^.*\)/' "() frac" "math() and not snip.visual_mode" ewrA
-`!p
-stripped = match.string[:-1]
-depth = 0
-i = len(stripped) - 1
-while True:
-	if stripped[i] == ')': depth += 1
-	if stripped[i] == '(': depth -= 1
-	if depth == 0: break;
-	i-=1
-snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
-`{$1}
-endsnippet
-priority 0
-
-# environments
+# tex
 # ------------------------------------------------------------------------------
 # https://tex.stackexchange.com/questions/2233/whats-the-best-way-make-an-augmented-coefficient-matrix
-snippet temp "Basic template" b
+snippet temp "Basic template" "not math()" eb
 \\documentclass[a4paper]{article}
 
 \\usepackage[utf8]{inputenc}
@@ -345,7 +84,7 @@ snippet temp "Basic template" b
 \\usepackage{mathtools, amssymb}
 \\usepackage[shortlabels]{enumitem}
 \\usepackage{booktabs,multirow}
-\\usepackage{graphicx,caption,subcaption}
+\\usepackage{graphicx,float,caption,subcaption}
 \\usepackage{tikz}
 
 % matrices
@@ -356,467 +95,97 @@ snippet temp "Basic template" b
 	\\array{#1}}
 \\makeatother
 
+\\title{$1}
+
 \\begin{document}
+	\\maketitle
 	$0
 \\end{document}
 endsnippet
 
-snippet "beg(\*?)" "begin" wr
-\\begin{$1`!p snip.rv = match.group(1)`}$2
-	${VISUAL}$0
-\\end{$1`!p snip.rv = match.group(1)`}
+snippet "sec(\*?)" "sections" "not math()" ewr
+\\section`!p snip.rv = match.group(1)`{${VISUAL}$1}
+$0
 endsnippet
 
-snippet item "itemize" w
+snippet "(s*)sub(\*?)" "subsection" "not math() or not env('figure')" ewr
+\\`!p snip.rv = ('sub'*(len(match.group(1))) if match.group(1) else '') + 'subsection' + match.group(2)`{${VISUAL}$1}
+$0
+endsnippet
+
+snippet item "itemize" "not math()" ew
 \\begin{itemize}
 	\\item ${VISUAL}$0
 \\end{itemize}
 endsnippet
 
-snippet enum "enumerate" w
+snippet enum "enumerate" "not math()" ew
 \\begin{enumerate}[${1:(a)}]
 	\\item ${VISUAL}$0
 \\end{enumerate}
 endsnippet
 
-snippet "spl(\*?)" "split" "not math()" ewr
-\\begin{equation`!p snip.rv = match.group(1)`}\\begin{split}
-	${VISUAL}$0
-\\end{split}\\end{equation}
+post_expand "fix_indent()"
+snippet ii "item" "env('enumerate') or env('itemize')" ebA
+\\item ${VISUAL}
 endsnippet
 
-snippet spl "split" "math()" eiA
-\\begin{split}
-	${VISUAL}$0
-\\end{split}
-endsnippet
-
-snippet "equ(\*?)" "equation" wr
-\\begin{equation`!p snip.rv = match.group(1)`}
-	${VISUAL}$0
-\\end{equation`!p snip.rv = match.group(1)`}
-endsnippet
-
-snippet "ali(\*?)" "align" wr
-\\begin{align`!p snip.rv = match.group(1)`}
-	${VISUAL}$0
-\\end{align`!p snip.rv = match.group(1)`}
-endsnippet
-
-snippet cen "center" w
+snippet cen "center" "not math()" ew
 \\begin{center}
 	${VISUAL}$0
 \\end{center}
 endsnippet
 
-snippet verb "verbatim" w
+snippet verb "verbatim" "not math()" ew
 \\begin{verbatim}
 ${VISUAL}$0
 \\end{verbatim}
 endsnippet
 
-snippet list "listing" w
+snippet code "listings" "not math()" ew
 \\begin{lstlisting}[language=$1]
 ${VISUAL}$0
 \\end{lstlisting}
 endsnippet
 
-# symbols
-# ------------------------------------------------------------------------------
+snippet i "italics" "not math() and snip.visual_mode" eiA
+\\textit{${VISUAL}}
+endsnippet
+
+snippet i "italics" "not math() and not snip.visual_mode" ew
+\\textit{$1}
+endsnippet
+
+snippet b "boldface" "not math() and snip.visual_mode" eiA
+\\textbf{${VISUAL}}
+endsnippet
+
+snippet b "boldface" "not math() and not snip.visual_mode" ew
+\\textbf{$1}
+endsnippet
+
+snippet u "underline" "not math() and snip.visual_mode" eiA
+\\underline{${VISUAL}}
+endsnippet
+
+snippet u "underline" "not math() and not snip.visual_mode" ew
+\\underline{$1}
+endsnippet
+
+snippet jj "enter math mode $$" "not math()" eiA
+\$${VISUAL}$1\$
+endsnippet
+
+snippet kk "enter centred math mode" "not math()" eiA
+\$\$${VISUAL}$0\$\$
+endsnippet
+
 snippet ~ "tilde" "not math()" ei
 $\\sim$
 endsnippet
 
-snippet ~~ "~" "math()" eiA
-\\sim
-endsnippet
-
-snippet ' "prime" "math()" eiA
-\\prime
-endsnippet
-
-snippet oo "\infty" "math()" eiA
-\\infty
-endsnippet
-
-snippet nab "nabla" "math()" eiA
-\\nabla
-endsnippet
-
-snippet par "partial" "math()" eiA
-\\partial
-endsnippet
-
-snippet deg "degree" "math() and aftermath(snip,3) and not after(snip,3,'\\')" eiA
-^\\circ
-endsnippet
-
-snippet "(hat|bar|vec|dot|ddot)" "modifiers" "math() and snip.visual_mode" eirA
-\\`!p snip.rv = match.group(1)`{${VISUAL}}
-endsnippet
-
-snippet "([A-Za-z]|\\[A-Za-z]+)(hat|bar|vec|dot|ddot)" "modifiers" "math() and not snip.visual_mode and not after(snip,3,['\\c'])" eirA
-\\`!p snip.rv = match.group(2)`{`!p snip.rv = match.group(1)`}
-endsnippet
-
-snippet '([lcvd])\.\.' "dots" "math()" eirA
-\\`!p snip.rv = match.group(1)`dots
-endsnippet
-
-snippet "(mu|nu|xi|Xi|pi|Pi)" "length 2 greek letters" "math() and not after(snip, 2, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "(rho|tau|phi|Phi|chi)" "length 3 greek letters" "math() and not after(snip, 3, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "(beta|zeta|iota)" "length 4 greek letters" "math() and not after(snip, 4, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "(alpha|gamma|Gamma|delta|Delta|theta|Theta|kappa|sigma|Sigma|omega|Omega)" "length 5 greek letters" "math() and not after(snip, 5, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "(Lambda|lambda)" "length 6 greek letters" "math() and not after(snip, 6, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "(upsilon|Upsilon)" "length 7 greek letters" "math() and not after(snip, 7, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet epsilon "epsilon" "math() and not after(snip, 7, ['\\var'])" eiA
-\\varepsilon
-endsnippet
-
-snippet eta "eta" "math() and not after(snip, 3, ['\\', 'b', 'th', 'z'])" eiA
-\\eta
-endsnippet
-
-snippet "(P|p)si" "psi" "math() and not after(snip, 3, ['\\','e','\\bigca'])" eirA
-\\`!p snip.rv = match.group(1)`si
-endsnippet
-
-# algebra
-# ------------------------------------------------------------------------------
-snippet +- "plus minus" "math()" eiA
-\\pm
-endsnippet
-
-snippet -+ "plus minus" "math()" eiA
-\\mp
-endsnippet
-
-snippet != "not equals" "math()" eiA
-\\neq
-endsnippet
-
-snippet ~= "approximately equal" "math()" eiA
-\\approx
-endsnippet
-
-snippet <= "less than or equal" "math()" eiA
-\\le
-endsnippet
-
-snippet >= "greater than or equal" "math()" eiA
-\\ge
-endsnippet
-
-snippet "(\(\)|\{\}|\[\]|<>|\|\|)" "empty brackets" irA
-`!p snip.rv = match.group(1)[0]`${VISUAL}$1`!p snip.rv = match.group(1)[1]`
-endsnippet
-
-snippet lr "\left? \right?" "math()" ei
-\\left$1${VISUAL}$2\\right$3
-endsnippet
-
-snippet "lrp|lr\(" "left( right)" "math()" eirA
-\\left(${VISUAL}$1\\right)
-endsnippet
-
-snippet "lrb|lr\[" "\left[ \right[" "math()" eirA
-\\left[${VISUAL}$1\\right]
-endsnippet
-
-snippet "lrB|lr\{" "\left{ \right{" "math()" eirA
-\\left\\{${VISUAL}$1\\right\\}
-endsnippet
-
-snippet "lra|lr<" "\left< \right>" "math()" eirA
-\\left<${VISUAL}$1\\right>
-endsnippet
-
-snippet "lrv|lr\|" "\left| \right|" "math()" eirA
-\\left\\lvert${VISUAL}$1\\right\\rvert
-endsnippet
-
-snippet lrV "\left|| \right||" "math()" eiA
-\\left\\lVert${VISUAL}$1\\right\\rVert
-endsnippet
-
-# operators
-# ------------------------------------------------------------------------------
-snippet ** "multiply dot" "math()" eiA
-\\cdot
-endsnippet
-
-snippet xx "multiply x" "math()" eiA
-\\times
-endsnippet
-
-snippet ss "superscript" "math() and snip.visual_mode" eiA
-{${VISUAL}}^{$1}
-endsnippet
-
-snippet ss "superscript" "math() and not snip.visual_mode and aftermath(snip, 2) and not after(snip, 2, ['\co', '\time', 'dot'])" eiA
-^{$1}
-endsnippet
-
-snippet dd "subscript" "math() and snip.visual_mode" eiA
-{${VISUAL}}_{$1}
-endsnippet
-
-snippet dd "subscript" "math() and not snip.visual_mode and aftermath(snip, 2)" eiA
-_{$1}
-endsnippet
-
-snippet "([A-Za-z])(\d)\2" "auto subscript" "math()" eirA
-`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
-endsnippet
-
-snippet sq "squared ^2" "math() and snip.visual_mode" eiA
-{${VISUAL}}^2
-endsnippet
-
-snippet sq "squared ^2" "math() and not snip.visual_mode and aftermath(snip, 2) and not after(snip, 2, ['\co', '\time', 'dot'])" eiA
-^2
-endsnippet
-
-snippet cb "cubed ^3" "math() and snip.visual_mode" eiA
-{${VISUAL}}^3
-endsnippet
-
-snippet cb "cubed ^3" "math() and not snip.visual_mode and aftermath(snip, 2)" eiA
-^3
-endsnippet
-
-snippet inv "inverse" "math() and snip.visual_mode" eiA
-{${VISUAL}}^{-1}
-endsnippet
-
-snippet inv "inverse" "math() and not snip.visual_mode and aftermath(snip, 3)" eiA
-^{-1}
-endsnippet
-
-snippet sr "square root" "math() and not after(snip, 2, ['\co', '\time', 'dot'])" eiA
-\\sqrt{${VISUAL}$1}
-endsnippet
-
-snippet cr "cube root" "math()" eiA
-\\sqrt[3]{${VISUAL}$1}
-endsnippet
-
-snippet bow "bowtie" "math()" eiA
-\\bowtie
-endsnippet
-
-snippet lap "laplacian" "math()" eiA
-\\bigtriangleup
-endsnippet
-
-snippet ln "natural logarithm" "math() and not after(snip, 2, '\\')" eiA
-\\ln
-endsnippet
-
-snippet "(log|exp|det|dim|ker|gcd|sup|max|min)" "length 3 operators" "math() and not after(snip, 3, '\\')" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet ceil "ceil" "math() and not after(snip, 4, ['\\r','\\l'])" eiA
-\\left\\lceil${VISUAL}$1\\right\\rceil
-endsnippet
-
-snippet floor "floor" "math() and not after(snip, 5, ['\\r', '\\l'])" eiA
-\\left\\lfloor${VISUAL}$1\\right\\rfloor
-endsnippet
-
-snippet eval "evaluated at" "math()" eiA
-\\left.${VISUAL}$1\\right\\vert_{$2}
-endsnippet
-
-snippet "(sin|cos|tan|csc|sec|cot)" "trig functions" "math() and not after(snip, 3, ['\\', '\\arc', 'a', 'h', '\\io'])" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "a(sin|cos|tan|csc|sec|cot)" "arc trig function" "math()" eirA
-\\arc`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "h(sin|cos|tan|csc|sec|cot)" "hyper trig functions" "math()" eirA
-\\`!p snip.rv = match.group(1)`h
-endsnippet
-
-snippet sum "sum" "math() and not after(snip, 3, '\\')" eiA
-\\sum_{${1:n=${2:1}}}^{${3:\\infty}} ${VISUAL}
-endsnippet
-
-snippet prod "product" "math() and not after(snip, 4, '\\')" eiA
-\\prod_{${1:n=${2:1}}}^{${3:\\infty}} ${VISUAL}
-endsnippet
-
-snippet "(i{1,4})nt" "integral" "math() and not after(snip,3,['\\s', '\\'])" eirA
-\\`!p snip.rv = match.group(1)`nt_{$1} ${VISUAL}
-endsnippet
-
-snippet lim "limit" "math() and not after(snip,3,'\\')" eiA
-\\lim_{${1:n}\\to ${2:\\infty}} ${VISUAL}
-endsnippet
-
-snippet lis "limsup" "math()" eiA
-\\limsup_{${1:n}\\to ${2:\\infty}} ${VISUAL}
-endsnippet
-
-# logic
-# ------------------------------------------------------------------------------
-snippet AA "forall" "math()" eiA
-\\forall
-endsnippet
-
-snippet EE "exists" "math() and not after(snip, 2, 'n')" eiA
-\\exists
-endsnippet
-
-snippet nEE "not exists" "math()" eiA
-\\nexists
-endsnippet
-
-snippet iff "iff" "math()" eAi
-\\iff
-endsnippet
-
-snippet => "implies" "math()" eAi
-\\implies
-endsnippet
-
-snippet =< "implied by" "math()" eAi
-\\impliedby
-endsnippet
-
-snippet -> "right arrow" "math() and not after(snip, 2, '|!<')" eiA
-\\rightarrow
-endsnippet
-
-snippet -< "left arrow" "math()" eiA
-\\leftarrow
-endsnippet
-
-snippet <-> "left right arrow" "math()" eiA
-\\leftrightarrow
-endsnippet
-
-snippet AND "AND" "math()" eiA
-\\wedge
-endsnippet
-
-snippet OR "OR" "math()" eiA
-\\vee
-endsnippet
-
-snippet NOT "NOT" "math()" eiA
-\\neg
-endsnippet
-
-# sets
-# ------------------------------------------------------------------------------
-snippet inn "in symbol" "math() and not after(snip, 3, ['\\not'])" eiA
-\\in
-endsnippet
-
-snippet notin "not in symbol" "math()" eiA
-\\notin
-endsnippet
-
-snippet "(cap|cup)" "cup and cap" "math() and not after(snip, 3, ['\\', '\\big'])" eirA
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "C(ap|up)" "cup and cap" "math()" eirA
-\\bigc`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet "(!|\|)->" "maps to" "math()" eirA
-\\mapsto
-endsnippet
-
-snippet cc "subset" "math()" eiA
-\\subset
-endsnippet
-
-snippet Cc "subset equal" "math()" eiA
-\\subseteq
-endsnippet
-
-snippet '\\\' "set difference" "math()" eiA
-\\setminus
-endsnippet
-
-snippet 00 "emptyset" "math() and not aftermath(snip,2) and not after(snip,2,',.')" eiA
-\\emptyset
-endsnippet
-
-snippet "(N|Z|Q|R|C|H|O|S|F)\1" "standard sets" "math()" eirA
-\\mathbb{`!p snip.rv = match.group(1)`}
-endsnippet
-
-# matrices
-# ------------------------------------------------------------------------------
-global !p
-def create_matrix(snip, offset=1):
-	# get dimensions should be of the form "@@[sapbBvV]*@@\d+@@\d+@@"
-	form = snip.buffer[snip.line].split('@@')
-	m, n = int(form[-2]), int(form[-3])
-	kind = form[-4]
-	augmented = ('a' in kind)
-	small = 'small' if ('s' in kind and not augmented) else ''
-	for i in 'as': kind = kind.replace(i,'')
-	if len(kind) != 0: kind = kind[0]
-	if n*m > 500: n, m = 1, 1
-
-	snippet_body = "\\begin{" + kind + small + "matrix}"
-	if augmented:
-		snippet_body += "[" + "r"*n + "|r]"
-		n += 1
-	snippet_body += '\n\t' \
-				 + ' \\\\\\\\\n\t'.join(
-					' & '.join(
-						'$' + str(i*n+j+offset) for j in range(n))
-					for i in range(m)) \
-				+ ' \\\\\\\\\n\\end{' + kind + small + 'matrix}'
-	snip.expand_anon(snippet_body, trigger="@@[sabBpvV]*@@\d+@@\d+@@", options="irA")
-endglobal
-
-post_jump "create_matrix(snip)"
-snippet 'M([sapbBvV]*)(\d+)\*(\d+) ' "nxm matrix" "math()" ewrA
-@@`!p snip.rv = '@@'.join(match.group(i) for i in range(1,4))`@@
-endsnippet
-
-post_jump "create_matrix(snip)"
-snippet 'V([spbBvV]*)(\d+) ' "n vector" "math()" ewrA
-@@`!p snip.rv = match.group(1)`@@1@@`!p snip.rv = match.group(2)`@@
-endsnippet
-
-snippet 'I(\d)' "n identity matrix" "math()" ewrA
-`!p
-n = int(match.group(1))
-snip.rv = "\\begin{bmatrix}\n\t" \
-		+ "\\\\\n\t".join(["& ".join(
-			["1 " if i==j else "0 "
-				for i in range(n)])
-			for j in range(n)])
-		+ "\\\\\n\\end{bmatrix}"`
+snippet \\[ "spaced newline" iA
+\\\\[$1${2:pt}]
 endsnippet
 
 # figures and tables
@@ -827,11 +196,11 @@ def create_table(snip):
 	form = snip.buffer[snip.line].split('@@')[-2]
 	size = sum([form.count(e) for e in 'lcr'])
 	snippet_body = "\\begin{tabular}{@{}" \
-				 + form \
-				 + "@{}}\n\t${1:\\toprule\n\t" \
-				 + " & ".join('$' + str(i+2) for i in range(size)) \
-				 + " \\\\\\\\$0" \
-				 + "\n\t\\bottomrule}\n\\end{tabular}"
+		+ form \
+		+ "@{}}\n\t${1:\\toprule\n\t" \
+		+ " & ".join('$' + str(i+2) for i in range(size)) \
+		+ " \\\\\\\\$0" \
+		+ "\n\t\\bottomrule}\n\\end{tabular}"
 	snip.expand_anon(snippet_body, trigger="@@[lcr|]+@@", options="irA")
 
 def create_row(snip):
@@ -845,7 +214,7 @@ def create_row(snip):
 			count = sum([form.count(e) for e in 'lcr'])
 			break
 	snippet_body = " & ".join(['$' + str(i+1) for i in range(count)]) \
-				 + " \\\\\\\\"
+		+ " \\\\\\\\"
 	snip.expand_anon(snippet_body, trigger="row", options="bA")
 endglobal
 
@@ -854,10 +223,10 @@ snippet ref "reference" w
 endsnippet
 
 snippet fig "figure" b
-\\begin{figure}[${1:h}]
+\\begin{figure}[${1:H}]
 	\\centering
 	${VISUAL}$0
-\\end{figure
+\\end{figure}
 endsnippet
 
 snippet tab "table" b
@@ -917,6 +286,31 @@ endsnippet
 
 snippet multi "multi column" "env('tabular')" ewA
 \\multicolumn{${1:columns}}{${2:format}}{${3:text}}$0
+endsnippet
+
+# cannot use regex with python as all system calls are duplicated
+snippet fig "draw a figure with swappy" "env('figure')" e
+\\includegraphics[${1:width=\linewidth}]{`mkdir -p images;
+name="images/$(zenity --entry --text='filename (no extension)').png";
+convert -size 1024x1024 xc:white $name;
+swappy -f $name -o $name;
+echo $name`}
+endsnippet
+
+snippet figlong "draw a long figure with swappy" "env('figure')" e
+\\includegraphics[${1:width=\linewidth}]{`mkdir -p images;
+name="images/$(zenity --entry --text='filename (no extension)').png";
+convert -size 1024x512 xc:white $name;
+swappy -f $name -o $name;
+echo $name`}
+endsnippet
+
+snippet figtall "draw a tall figure with swappy" "env('figure')" e
+\\includegraphics[${1:width=\linewidth}]{`mkdir -p images;
+name="images/$(zenity --entry --text='filename (no extension)').png";
+convert -size 512x1024 xc:white $name;
+swappy -f $name -o $name;
+echo $name`}
 endsnippet
 
 # tikz

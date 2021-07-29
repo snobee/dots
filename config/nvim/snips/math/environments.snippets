@@ -1,0 +1,43 @@
+global !p
+from latex import *
+endglobal
+
+snippet "beg(\*?)" "begin" r
+\\begin{$1`!p snip.rv = match.group(1)`}$2
+	${VISUAL}$0
+\\end{$1`!p snip.rv = match.group(1)`}
+endsnippet
+
+snippet equ "equation"
+\\begin{equation}
+	${VISUAL}$0
+\\end{equation}
+endsnippet
+
+snippet "ali(\*?)" "align" "not math()" ewr
+\\begin{align`!p snip.rv = match.group(1)`}
+	${VISUAL}$0
+\\end{align`!p snip.rv = match.group(1)`}
+endsnippet
+
+snippet spl "split" "math()" eiA
+\\begin{split}
+	${VISUAL}$0
+\\end{split}
+endsnippet
+
+snippet mult "multline"
+\\begin{multline}
+	${VISUAL}$0
+\\end{multline}
+endsnippet
+
+snippet case "cases" "math()" eiA
+\\begin{cases}
+	${VISUAL}$0
+\\end{cases}
+endsnippet
+
+snippet tt "text mode" "math()" eiA
+\\text{${VISUAL}$1}
+endsnippet
