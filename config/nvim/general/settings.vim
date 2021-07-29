@@ -10,6 +10,7 @@ set previewheight=6                     " Makes preview window smaller
 set laststatus=2                        " Always display the status line
 set showtabline=1                       " Always show tabs
 set cmdheight=1                         " More space for displaying messages
+set noshowmode                          " don't show the current editing mode
 set mouse=a                             " Enable your mouse
 set splitright                          " Vertical splits will automatically be to the right
 set splitbelow                          " Horizontal splits will automatically be below
