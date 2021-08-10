@@ -38,7 +38,7 @@ snippet '([lcvd])\.\.' "dots" "math()" eirA
 \\`!p snip.rv = match.group(1)`dots
 endsnippet
 
-snippet "(?<! )( {1,5})" "spaces" "math()" eri
+snippet "(?<!^)(?<! )( {1,5})" "spaces" "math()" eri
 `!p 
 spaces = [',', ':', ' ', 'quad', 'qquad']
 snip.rv = '\\' + spaces[len(match.group(1)) - 1]`
