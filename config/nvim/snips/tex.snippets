@@ -95,6 +95,16 @@ snippet temp "Basic template" "not math()" eb
 	\\array{#1}}
 \\makeatother
 
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proof}{Proof}[theorem]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{example}{Example}[section]
+
 \\title{$1}
 
 \\begin{document}
