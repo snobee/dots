@@ -7,11 +7,10 @@ set $right l
 set $term kitty
 set $lock lock.sh
 set $menu wofi
-set $screenshot grim ~/Onedrive/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip grim -g "$(slurp)" ~/Onedrive/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenshot grim ~/pictures/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip grim -g "$(slurp)" ~/pictures/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
 ### Autostart
-exec firefox
 exec $term --class terminal
 exec_always --no-startup-id flashfocus &
 exec killall flashfocus
@@ -98,7 +97,6 @@ for_window [app_id="zoom" title="Zoom Meeting"] floating disable
 for_window [app_id="zenity"] floating enable, border none
 for_window [app_id="kitty"] floating enable, border none
 for_window [app_id="qalculate-gtk"] floating enable, border none
-for_window [title="Ulauncher Preferences"] floating enable, border none
 
 # workspaces:
 bindsym $mod+1 workspace number 1
@@ -111,6 +109,7 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -121,6 +120,7 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+underscore move container scratchpad
 
 ### Resizing
 bindsym $mod+r mode "resize"
