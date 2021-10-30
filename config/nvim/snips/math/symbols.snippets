@@ -30,7 +30,7 @@ snippet "(hat|bar|vec|dot|ddot)" "modifiers" "math() and snip.visual_mode" eirA
 \\`!p snip.rv = match.group(1)`{${VISUAL}}
 endsnippet
 
-snippet "(?<!\\c)([A-Za-z]|\\[A-Za-z]+)(hat|bar|vec|dot|ddot)" "modifiers" "math() and not snip.visual_mode" eirA
+snippet "([A-Za-z]|\\[A-Za-z]+)(?<!\\c)(hat|bar|vec|dot|ddot)" "modifiers" "math() and not snip.visual_mode" eirA
 \\`!p snip.rv = match.group(2)`{`!p snip.rv = match.group(1)`}
 endsnippet
 

@@ -29,9 +29,10 @@
 #       nab         iAm     insert nabla
 #       par         iAm     insert partial derivative
 #       deg         iAm     insert degree symbol
-#       hat         iAm     wrap   haracter or symbol in \hat
-#       bar         iAm     wrap   haracter or symbol in \bar
-#       vec         iAm     wrap   haracter or symbol in \vec
+#       hat         iAm     wrap   character or symbol in \hat
+#       bar         iAm     wrap   character or symbol in \bar
+#       vec         iAm     wrap   character or symbol in \vec
+#       dot         iAm     wrap   character or symbol in \dot
 #       l..         iAm     insert lower dots
 #       c..         iAm     insert centred dots
 #       v..         iAm     insert vertical dots
