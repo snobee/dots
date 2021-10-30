@@ -60,7 +60,7 @@ snippet dd "subscript" "math() and not snip.visual_mode and aftermath(snip, 2)" 
 _{$1}
 endsnippet
 
-snippet "([A-Za-z])(\d)\2" "auto subscript" "math()" eirA
+snippet "([A-Za-z]|\}|\))(\d)\2" "auto subscript" "math()" eirA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
