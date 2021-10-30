@@ -135,6 +135,7 @@
 #       !->         iAm     insert maps to symbol
 #       cc          iAm     insert subset symbol
 #       Cc          iAm     insert subset equal symbol
+#       =~          iAm     insert congruence/isomorphism symbol
 #       \\\         iAm     insert set difference symbol
 #       00          iAm     insert emptyset symbol
 #       ??          iAm     insert standard set of numbers
