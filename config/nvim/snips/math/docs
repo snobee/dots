@@ -144,7 +144,7 @@
 #
 #   matrices
 #       ??          Am      start  matrix
-#        `-> expands on "M<type><columns>*<rows> "
+#        `-> expands on "M<type><rows>*<columns> "
 #            where <type> is a combination of:
 #               - s for small
 #               - a for augmented '[|]'
