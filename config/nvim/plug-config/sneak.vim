@@ -4,7 +4,7 @@ let g:sneak#use_ic_scs = 1
 " ; takes you forward , takes you back
 let g:sneak#absolute_dir = 1
 
-" Change the colors
+" Change the colours
 highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 

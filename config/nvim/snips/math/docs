@@ -51,7 +51,7 @@
 #       >=          iAm     insert greater than or equal to symbol
 #       ==          iAe     start  aligned equality (in 'align', 'aligned', or 'split')
 #       ??          iA      start  brackets
-#       `-> expands on empty brackets and puts the cursur in the middle
+#       `-> expands on empty brackets and puts the cursor in the middle
 #       lr          im      start  unspecified auto sized brackets
 #       ??          iAm     start  auto sized brackets
 #        `-> expands on 'lr' followed by an opening bracket or:
@@ -82,7 +82,7 @@
 #       inv         iAm     insert inverse operator
 #       sr          iAm     start  square root
 #       cr          iAm     start  cube root
-#       bow         iAm     insert bowtie
+#       bow         iAm     insert bow tie
 #       ln          iAm     start  natural logarithm
 #       log         iAm     start  logarithm
 #       exp         iAm     insert exponential
@@ -95,7 +95,7 @@
 #       min         iAm     insert min
 #       ceil        iAm     start  ceiling
 #       floor       iAm     start  floor
-#       eval        iAm     start  expresion evaluated at
+#       eval        iAm     start  expression evaluated at
 #       ??          iAm     start  trig function
 #        `-> expands on any shortened trig function ie. 'sin', 'tan', 'csc'
 #       ??          iAm     start  inverse trig function

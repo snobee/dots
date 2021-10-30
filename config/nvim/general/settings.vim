@@ -14,9 +14,9 @@ set noshowmode                          " don't show the current editing mode
 set mouse=a                             " Enable your mouse
 set splitright                          " Vertical splits will automatically be to the right
 set splitbelow                          " Horizontal splits will automatically be below
-set t_Co=256                            " Support 256 colors
+set t_Co=256                            " Support 256 colours
 set termguicolors                       " Support full 24bit colours
-set background=dark                     " tell vim what the background color looks like
+set background=dark                     " tell vim what the background colour looks like
 set expandtab                           " Converts tabs to spaces
 set shiftwidth=4                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
@@ -27,7 +27,7 @@ set shortmess+=c                        " Don't pass messages to |ins-completion
 set updatetime=300                      " Faster completion
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set ruler                               " Show the cursor position all the time
-set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
+set signcolumn=yes                      " Always show the sign column, otherwise it would shift the text each time
 set cursorline                          " colours the line your on
 set nu rnu                              " enable hybrid line numbers
 set ignorecase                          " searches will be case insensitive
@@ -35,7 +35,7 @@ set smartcase                           " searches will be case insensitive unle
 set conceallevel=2                      " allow plugins to represent text with something else
 set virtualedit=all                     " move the cursor past the EOL
 set spell                               " use spellchecking
-set spelllang=en_ca                     " use canadian english
+set spelllang=en_ca                     " use Canadian English
 
 let &shell=get({
     \ '/bin/zsh':  '/usr/bin/env zsh -i',
