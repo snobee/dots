@@ -23,6 +23,14 @@
 #       ??          wn*     start  a new subsection
 #        `-> expands on 'sub' preceded by any number of 's's
 #            each aditional 's' will increase the level of subsection
+#       thm         wn*     start  a new theorem
+#       prop        wn*     start  a new proposition
+#       lem         wn*     start  a new lemma
+#       cor         wn*     start  a new corollary
+#       prf         wn*     start  a new proof
+#       def         wn*     start  a new definition
+#       rem         wn*     start  a new remark
+#       ex          wn*     start  a new example
 #       item        wn      enter  an itemize environment
 #       enum        wn      enter  an enumitem environment
 #       cen         wn      enter  a  centre environment
@@ -121,6 +129,54 @@ endsnippet
 snippet "(s*)sub(\*?)" "subsection" "not math() or not env('figure')" ewr
 \\`!p snip.rv = ('sub'*(len(match.group(1))) if match.group(1) else '') + 'subsection' + match.group(2)`{${VISUAL}$1}
 $0
+endsnippet
+
+snippet "thm(\*?)" "theorem" "not math()" ewr
+\\begin{theorem}
+	${VISUAL}$0
+\\end{theorem}
+endsnippet
+
+snippet "prop(\*?)" "proposition" "not math()" ewr
+\\begin{proposition}
+	${VISUAL}$0
+\\end{proposition}
+endsnippet
+
+snippet "lem(\*?)" "lemma" "not math()" ewr
+\\begin{lemma}
+	${VISUAL}$0
+\\end{lemma}
+endsnippet
+
+snippet "cor(\*?)" "corollary" "not math()" ewr
+\\begin{corollary}
+	${VISUAL}$0
+\\end{corollary}
+endsnippet
+
+snippet "prf(\*?)" "proof" "not math()" ewr
+\\begin{proof}
+	${VISUAL}$0
+\\end{proof}
+endsnippet
+
+snippet "def(\*?)" "definition" "not math()" ewr
+\\begin{definition}
+	${VISUAL}$0
+\\end{definition}
+endsnippet
+
+snippet "rem(\*?)" "remark" "not math()" ewr
+\\begin{remark}
+	${VISUAL}$0
+\\end{remark}
+endsnippet
+
+snippet "ex(\*?)" "example" "not math()" ewr
+\\begin{example}
+	${VISUAL}$0
+\\end{example}
 endsnippet
 
 snippet item "itemize" "not math()" ew
