@@ -15,7 +15,7 @@
 #
 #   environments
 #       beg         *       enter  a new environment
-#       equ                 enter  an equation environment
+#       equ         wn      enter  an equation environment
 #       ali         wn*     enter  an align environment
 #       spl         iAm     enter  a split environment
 #       mult        iAm     enter  a multline environment

@@ -8,7 +8,7 @@ snippet "beg(\*?)" "begin" r
 \\end{$1`!p snip.rv = match.group(1)`}
 endsnippet
 
-snippet equ "equation"
+snippet equ "equation" "not math()" ew
 \\begin{equation}
 	${VISUAL}$0
 \\end{equation}
@@ -20,7 +20,7 @@ snippet "ali(\*?)" "align" "not math()" ewr
 \\end{align`!p snip.rv = match.group(1)`}
 endsnippet
 
-snippet spl "split" "math()" eiA
+snippet spl "split" "env('align') or env('equation')" eiA
 \\begin{split}
 	${VISUAL}$0
 \\end{split}
