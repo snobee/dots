@@ -124,8 +124,9 @@
 #       NOT         iAm     insert negation symbol
 #
 #   sets
-#       inn         iAm     insert in symbol
-#       notin       iAm     insert not in symbol
+#       set         iAm     start a set
+#       ee          iAm     insert in symbol
+#       nee         iAm     insert not in symbol
 #       cap         iAm     insert cap symbol
 #       Cap         iAm     insert big cap symbol
 #       cup         iAm     insert cup symbol

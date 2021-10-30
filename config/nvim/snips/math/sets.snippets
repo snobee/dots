@@ -2,11 +2,15 @@ global !p
 from latex import *
 endglobal
 
-snippet "(?<!\\not)inn" "in symbol" "math()" eirA
+snippet set "set" "math()" eiA
+\\{${1:$2\\mid$3}\\}
+endsnippet
+
+snippet "(?<!n)ee" "in symbol" "math()" eirA
 \\in
 endsnippet
 
-snippet notin "not in symbol" "math()" eiA
+snippet nee "not in symbol" "math()" eiA
 \\notin
 endsnippet
 
