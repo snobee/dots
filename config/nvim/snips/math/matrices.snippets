@@ -10,7 +10,7 @@ small_kinds = {'p': ['\\left(', '\\right)'],
 def create_matrix(snip, offset=1):
 	# get dimensions should be of the form "@@[sapbBvV]*@@\d+@@\d+@@"
 	form = snip.buffer[snip.line].split('@@')
-	m, n = int(form[-2]), int(form[-3])
+	n, m = int(form[-3]), int(form[-2])
 	kind = form[-4]
 	augmented = 'a' in kind
 	small = 's' in kind and not augmented
@@ -27,8 +27,8 @@ def create_matrix(snip, offset=1):
 	snippet_body += '\n\t' \
 				+ ' \\\\\\\\\n\t'.join(
 					' & '.join(
-						'$' + str(i*n+j+offset) for j in range(n))
-					for i in range(m)) \
+						'$' + str(i*m+j+offset) for j in range(m))
+					for i in range(n)) \
 				+ ' \\\\\\\\\n\\end{' + effective_kind + 'matrix}'
 	if small and kind: snippet_body += small_kinds[kind][1]
 	snip.expand_anon(snippet_body, trigger="@@[sabBpvV]*@@\d+@@\d+@@", options="irA")
@@ -41,7 +41,7 @@ endsnippet
 
 post_jump "create_matrix(snip)"
 snippet 'V([spbBvV]*)(\d+) ' "n vector" "math()" erA
-@@`!p snip.rv = match.group(1)`@@1@@`!p snip.rv = match.group(2)`@@
+@@`!p snip.rv = match.group(1)`@@`!p snip.rv = match.group(2)`@@1@@
 endsnippet
 
 snippet 'I(\d)' "n identity matrix" "math()" erA
