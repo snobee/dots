@@ -30,6 +30,7 @@ elif [ "$(uname)" = "Linux" ]; then
     alias ls="ls --color -l"
 fi
 alias la="ls -a"
+alias clear="printf \"\\033c\""
 alias clr=clear
 alias rr=ranger
 alias ..="cd .."
@@ -44,10 +45,10 @@ leader=" "
 autoload -U edit-command-line                       # open command in vim
 zle -N edit-command-line
 bindkey  -M vicmd   ' '         edit-command-line
-bindkey  -M viins   'kl'        vi-cmd-mode         # back to normal mode
-bindkey  -M viins   'lk'        vi-cmd-mode
-bindkey  -M viins   'KL'        vi-cmd-mode
-bindkey  -M viins   'LK'        vi-cmd-mode
+bindkey  -M viins   'jk'        vi-cmd-mode
+bindkey  -M viins   'kj'        vi-cmd-mode         # back to normal mode
+bindkey  -M viins   'JK'        vi-cmd-mode
+bindkey  -M viins   'KJ'        vi-cmd-mode
 bindkey -sM viins   '^T'        '^[viw~ea'          # toggle caps
 bindkey -sM vicmd   '^T'        'viw~e'
 bindkey -sM vicmd   'L'         'xp'                # shift character right
