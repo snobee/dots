@@ -1,10 +1,10 @@
 let mapleader = " "                                 " map leader to Space (only possible as there are no imap <leader> commands
 
 xnoremap <cr> <esc>|                                " exit visual with return
-inoremap lk <esc>|                                  " exit insert mode with k+l
-inoremap kl <esc>
-inoremap LK <esc>|                                  " or K+L
-inoremap KL <esc>
+inoremap jk <esc>|                                  " exit insert mode with j+k
+inoremap kj <esc>
+inoremap JK <esc>|                                  " or K+J
+inoremap KJ <esc>
 tnoremap <Esc> <C-\><C-n>                           " escape terminal with <esc>
 
 vmap <silent> <Up> gk|                              " move through soft wrapped lines
@@ -25,28 +25,24 @@ nnoremap <silent> <leader>s :w<cr>|                 " different saving yay
 nnoremap <silent> <tab> :bn<cr>|                    " tab/TAB in normal to switch buffers
 nnoremap <silent> <s-tab> :bp<cr>
 nnoremap <silent> <c-q> :bd<cr>|                    " close buffer with ctrl+q
-nnoremap <c-o> <c-w><c-o>|                          " remove other windows from tab with ctrl+o
-nnoremap <c-h> <c-w>h|                              " Better window navigation with ctrl+direction
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
 
 nnoremap <silent> <leader> :noh<cr>|                " remove highlighting
 nnoremap Y y$|                                      " yank to the end of line
 inoremap <s-tab> <c-d>|                             " unindent with shift+tab
 xnoremap > >gv|                                     " tab right
 xnoremap < <gv|                                     " tab left
-inoremap <c-t> <esc>viw~ea|                         " Easy toggle caps with ctrl-t
-nnoremap <c-t> viw~e
 
-nnoremap <silent> J :move +1<cr>|                   " move lines up and down
-nnoremap <silent> K :move -2<cr>
-xnoremap <silent> J :move +2<cr>gv=gv
-xnoremap <silent> K :move -2<cr>gv=gv
-nnoremap L lhxp|                                    " move selection left and right (its a bit slow)
-nnoremap H hlxhP
-xnoremap L lholhxp`[1v
-xnoremap H hlohlxhP`[1v
+" move selection up and down
+let move_up   = "\<esc>`>\<c-v>`<maomdOmc\"aygv`akoky`dv`cp`d\<c-v>`akok\"apgv"
+let move_down = "\<esc>`<\<c-v>`>mdomaOmb\"aygv`djojy`av`bp`a\<c-v>`djoj\"apgv"
+vnoremap <silent> <expr> <c-j> mode()==?'v' ? ":m '>+1<cr>gv" : move_down
+vnoremap <silent> <expr> <c-k> mode()==?'v' ? ":m '<-2<cr>gv" : move_up
+nnoremap <silent> <c-j> :m .+1<cr>|                 " move lines up and down
+nnoremap <silent> <c-k> :m .-2<cr>
+vnoremap <c-l> lholhxp`[1v|                         " move selection left and right
+vnoremap <c-h> hlohlxhP`[1v
+nnoremap <c-l> lhxp|                                " move character left and right
+nnoremap <c-h> hlxhP
 
 nnoremap <leader>O O<esc>|                          " add blank line above
 nnoremap <leader>o o<esc>|                          " add blank line below

@@ -11,10 +11,6 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 " Cool prompts
 let g:sneak#prompt = '🕵'
 
-map df <Plug>Sneak_s
-map fd <Plug>Sneak_s
-map DF <Plug>Sneak_S
-map FD <Plug>Sneak_S
 map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
