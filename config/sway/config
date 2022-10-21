@@ -7,24 +7,24 @@ set $right l
 set $term kitty
 set $lock lock.sh
 set $menu wofi
-set $screenshot grim ~/pictures/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip grim -g "$(slurp)" ~/pictures/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenshot grim ~/pictures/Screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip grim -g "$(slurp)" ~/pictures/Screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
-### Autostart
+### Auto start
 exec $term --class terminal
-exec_always --no-startup-id flashfocus &
+exec --no-startup-id flashfocus &
 exec killall flashfocus
 exec --no-startup-id flashfocus &
 
 ### Input configuration
 input "type:touchpad" {
-    dwt enabled
+    dwt disabled
     tap enabled
     middle_emulation enabled
     click_method clickfinger
     drag disabled
 }
-seat * hide_cursor when-typing enable
+seat * hide_cursor when-typing enabled
 
 ### Output configuration
 output eDP-1 resolution 2736x1824 scale 2
@@ -98,7 +98,7 @@ for_window [app_id="zenity"] floating enable, border none
 for_window [app_id="kitty"] floating enable, border none
 for_window [app_id="qalculate-gtk"] floating enable, border none
 
-# workspaces:
+# work spaces:
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
