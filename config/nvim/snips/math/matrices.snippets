@@ -43,14 +43,3 @@ post_jump "create_matrix(snip)"
 snippet 'V([spbBvV]*)(\d+) ' "n vector" "math()" erA
 @@`!p snip.rv = match.group(1)`@@`!p snip.rv = match.group(2)`@@1@@
 endsnippet
-
-snippet 'I(\d)' "n identity matrix" "math()" erA
-`!p
-n = int(match.group(1))
-snip.rv = "\\begin{bmatrix}\n\t" \
-		+ "\\\\\n\t".join(["& ".join(
-			["1 " if i==j else "0 "
-				for i in range(n)])
-			for j in range(n)])
-		+ "\\\\\n\\end{bmatrix}"`
-endsnippet

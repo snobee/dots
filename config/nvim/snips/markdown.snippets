@@ -72,6 +72,8 @@ def create_item(snip):
 	snippet_body = ""
 	if match := re.match("([-\+\*][\\t ]+)\[[ x]\]", line):
 		snippet_body += match.group(1) + "[$1] $0"
+	if match := re.match("(>[\\t ]+)([-\+\*])", line):
+		snippet_body += match.group(1) + match.group(2) +" $0"
 	elif len(line) > 0 and line[0] in '-*+':
 		snippet_body += line[0] + " "
 	elif match := re.match("(\\d+)\\.", line):

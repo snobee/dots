@@ -14,6 +14,14 @@ snippet != "not equals" "math()" eiA
 \\neq
 endsnippet
 
+snippet "(?<!n)div" "divides" "math()" eirA
+\\mid
+endsnippet
+
+snippet ndiv "not divides" "math()" eiA
+\\nmid
+endsnippet
+
 snippet ~= "approximately equal" "math()" eiA
 \\approx
 endsnippet
@@ -22,12 +30,12 @@ snippet <= "less than or equal" "math()" eiA
 \\le
 endsnippet
 
-snippet >= "greater than or equal" "math()" eiA
+snippet "(?<!\\right)>=" "greater than or equal" "math()" eirA
 \\ge
 endsnippet
 
-snippet == "aligned equals" "env('align') or env('aligned') or env('split')" eiA
-&= ${VISUAL}$1 \\\\
+snippet "(=|\\approx|\\cong|\\iff|\\implies|\\impliedby|\\leftarrow|\\rightarrow|\\leftrightarrow|\\mapsto)=" "aligned symbol" "env('align') or env('aligned') or env('split')" eirA
+&`!p snip.rv = match.group(1)` ${VISUAL}$1 \\\\
 endsnippet
 
 snippet "(\(\)|\{\}|\[\]|<>|\|\|)" "empty brackets" irA

@@ -49,9 +49,20 @@
 #       ~=          iAm     insert approximately equal symbol
 #       <=          iAm     insert less than or equal to symbol
 #       >=          iAm     insert greater than or equal to symbol
-#       ==          iAe     start  aligned equality (in 'align', 'aligned', or 'split')
+#       ??          iAe     start  aligned symbol (in 'align', 'aligned', or 'split')
+#        `-> expands on an = after any of the following
+#           - =
+#           - \approx
+#           - \cong
+#           - \iff
+#           - \implies
+#           - \impliedby
+#           - \leftarrow
+#           - \rightarrow
+#           - \leftrightarrow
+#           - \mapsto
 #       ??          iA      start  brackets
-#       `-> expands on empty brackets and puts the cursor in the middle
+#        `-> expands on empty brackets and puts the cursor in the middle
 #       lr          im      start  unspecified auto sized brackets
 #       ??          iAm     start  auto sized brackets
 #        `-> expands on 'lr' followed by an opening bracket or:

@@ -48,7 +48,7 @@ snippet ss "superscript" "math() and snip.visual_mode" eiA
 {${VISUAL}}^{$1}
 endsnippet
 
-snippet "(?<!\\time)(?<!(\\co|dot))ss" "superscript" "math() and not snip.visual_mode and aftermath(snip,2)" eirA
+snippet "(?<!\\setminu)(?<!\\(implie|nexist))(?<!\\exist)(?<!\\(time|[lcdv]dot))(?<!\\co)ss" "superscript" "math() and not snip.visual_mode and aftermath(snip,2)" eirA
 ^{$1}
 endsnippet
 
@@ -120,7 +120,7 @@ snippet eval "evaluated at" "math()" eiA
 \\left.${VISUAL}$1\\right\\vert_{$2}
 endsnippet
 
-snippet "(?<!\\arc)(?<!\\io)(?<![\\ah])(sin|cos|tan|csc|sec|cot)" "trig functions" "math()" eirA
+snippet "(?<!\\arc)(?<!\\(io|be))(?<![\\ah])(sin|cos|tan|csc|sec|cot)" "trig functions" "math()" eirA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 

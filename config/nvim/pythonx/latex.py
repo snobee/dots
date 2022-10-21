@@ -23,6 +23,6 @@ def env(name):
 def aftermath(snip, length):
     line = snip.buffer[snip.line]
     start = snip.column - length + 1
-    if re.match("[A-Za-z\\d\\)\\}]", line[start - 1 : start]):
+    if re.match("[A-Za-z\\d\\)\\}\\]]", line[start - 1 : start]):
         return True
     return False
