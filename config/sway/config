@@ -97,6 +97,7 @@ for_window [app_id="zoom" title="Zoom Meeting"] floating disable
 for_window [app_id="zenity"] floating enable, border none
 for_window [app_id="kitty"] floating enable, border none
 for_window [app_id="qalculate-gtk"] floating enable, border none
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
 
 # work spaces:
 bindsym $mod+1 workspace number 1
