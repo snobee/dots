@@ -1,8 +1,7 @@
 
 require("general/settings")
+require("keys/mappings")
 vim.cmd([[
-source $HOME/.config/nvim/keys/mappings.vim
-
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/supertab.vim
