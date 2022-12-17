@@ -1,7 +1,7 @@
 require 'general/settings'
 require 'keys/mappings'
 
-vim.cmd 'source $HOME/.config/nvim/vim-plug/plugins.vim'
+require 'plug-config/plugins'
 require 'plug-config/airline'
 require 'plug-config/coc'
 require 'plug-config/gruvbox-material'
