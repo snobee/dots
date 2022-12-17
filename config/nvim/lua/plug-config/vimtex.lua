@@ -8,8 +8,8 @@ vim.g.vimtex_view_automatic = 0           -- needed for Wayland
 vim.api.nvim_create_autocmd({'FileType'}, {
     pattern = 'tex',
     callback = function()
-        vim.cmd'VimtexCompile'
-        vim.cmd 'VimtexView' 
-        vim.api.nvim_set_keymap('n', '<leader>', ':noh<cr><plug>(vimtex-view)', {silent = true})
+        vim.cmd.VimtexCompile ()
+        vim.cmd.VimtexView ()
+        vim.keymap.set('n', '<leader>', ':noh<cr><plug>(vimtex-view)', {silent = true})
     end
 })

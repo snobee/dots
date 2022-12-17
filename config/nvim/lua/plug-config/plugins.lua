@@ -1,21 +1,24 @@
 require 'os'
 require 'io'
 -- auto-install vim-plug
-local f=io.open(os.getenv('HOME') .. '/.config/nvim/autoload/plug.vim')
+local f = io.open(os.getenv('HOME') .. '/.config/nvim/autoload/plug.vim')
 if f == nil then
-    os.execute('curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+    local autoload_file = '~/.config/nvim/autoload/plug.vim'
+    local git_source = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    os.execute('curl -fLo ' .. autoload_file .. ' --create-dirs ' .. git_source)
     vim.api.nvim_create_autocmd({'VimEnter'}, {
         callback = function() 
-            vim.cmd 'PlugInstall'
-            vim.cmd 'source $MYVIMRC'
+            vim.cmd.PlugInstall()
+            vim.cmd.source '$MYVIMRC'
         end
     })
-else io.close(f)
+else 
+    io.close(f)
 end
 
 local Plug = vim.fn['plug#']
 -- directory for plugins
-vim.call('plug#begin', '~/.config/nvim/vim-plug')
+vim.fn['plug#begin'] '~/.config/nvim/vim-plug'
 
 -- better statusline
 Plug 'vim-airline/vim-airline'

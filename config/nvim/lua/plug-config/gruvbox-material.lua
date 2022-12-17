@@ -36,4 +36,4 @@ vim.g.gruvbox_material_colors_override = {
     none =             {'NONE',    'NONE'}
 }
 
-vim.cmd('colorscheme gruvbox-material')
+vim.cmd.colorscheme 'gruvbox-material'

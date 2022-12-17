@@ -49,14 +49,15 @@ vim.api.nvim_create_autocmd({'BufEnter'}, {
     callback = function()
         if vim.o.filetype == 'help' then 
             vim.opt.buflisted = true 
-            vim.cmd.only()
+            vim.cmd.only ()
         end
     end
 })
 
 -- start shell in interactive mode
-shells = {}
-shells['/bin/zsh'] = '/usr/bin/env zsh -i'
-shells['/bin/bash'] = '/usr/bin/env bash -i'
+local shells = {
+    ['/bin/zsh'] = '/usr/bin/env zsh -i', 
+    ['/bin/bash'] = '/usr/bin/env bash -i'
+}
 vim.opt.shell = shells[vim.api.nvim_exec('echo $SHELL', {output=true})]
 
