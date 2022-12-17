@@ -32,6 +32,7 @@ vim.opt.smartcase = true            -- searches will be case insensitive unless 
 vim.opt.conceallevel = 2            -- allow plugins to represent text with something else
 vim.opt.virtualedit = 'all'         -- move the cursor past the EOL
 vim.opt.spell = true                -- use spellchecking
+vim.opt.sps = 'best,5'              -- show 5 spelling suggestion ordered by 'best'
 vim.opt.spelllang = 'en_ca'         -- use Canadian English
 vim.opt.timeoutlen = 300            -- timeout for key mappings
 
@@ -48,7 +49,7 @@ vim.api.nvim_create_autocmd({'BufEnter'}, {
     callback = function()
         if vim.o.filetype == 'help' then 
             vim.opt.buflisted = true 
-            vim.cmd('only')
+            vim.cmd.only()
         end
     end
 })
@@ -57,4 +58,5 @@ vim.api.nvim_create_autocmd({'BufEnter'}, {
 shells = {}
 shells['/bin/zsh'] = '/usr/bin/env zsh -i'
 shells['/bin/bash'] = '/usr/bin/env bash -i'
-vim.opt.shell = shells[vim.cmd('echo $SHELL')]
+vim.opt.shell = shells[vim.api.nvim_exec('echo $SHELL', {output=true})]
+
