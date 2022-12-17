@@ -1,15 +1,14 @@
+require 'general/settings'
+require 'keys/mappings'
 
-require("general/settings")
-require("keys/mappings")
-vim.cmd([[
-source $HOME/.config/nvim/vim-plug/plugins.vim
-source $HOME/.config/nvim/plug-config/vimtex.vim
-source $HOME/.config/nvim/plug-config/supertab.vim
-source $HOME/.config/nvim/plug-config/ultisnips.vim
-source $HOME/.config/nvim/plug-config/airline.vim
-source $HOME/.config/nvim/plug-config/rnvimr.vim
-source $HOME/.config/nvim/plug-config/sneak.vim
-source $HOME/.config/nvim/plug-config/gruvbox-material.vim
-source $HOME/.config/nvim/plug-config/hexokinase.vim
-source $HOME/.config/nvim/plug-config/vim-pandoc.vim
-]])
+vim.cmd 'source $HOME/.config/nvim/vim-plug/plugins.vim'
+require 'plug-config/airline'
+require 'plug-config/coc'
+require 'plug-config/gruvbox-material'
+require 'plug-config/hexokinase'
+require 'plug-config/rnvimr'
+require 'plug-config/sneak'
+require 'plug-config/supertab'
+require 'plug-config/ultisnips'
+require 'plug-config/vim-pandoc'
+require 'plug-config/vimtex'

@@ -1,3 +1,4 @@
+vim.cmd([[
 let g:coc_global_extensions = [
   \ 'coc-ultisnips',
   \ 'coc-actions',
@@ -29,3 +30,4 @@ let g:coc_global_extensions = [
 let g:coc_filetype_map = {
     \ 'pandoc': 'markdown',
     \ }
+]])
