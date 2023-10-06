@@ -32,13 +32,17 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 
 -- snips plugin for tab completion
 Plug 'sirver/ultisnips'
-
--- Supertab
--- Plug 'ervandew/supertab'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 -- autocompletion
--- Plug 'neoclide/coc.nvim', {'branch': 'release'}
--- Plug 'dense-analysis/ale'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+-- language server
+Plug 'neovim/nvim-lspconfig'
 
 -- colorscheme
 Plug('sainnhe/gruvbox-material', { branch = 'master' })
