@@ -44,7 +44,7 @@
 #
 #   algebra
 #       +-          iAm     insert +- symbol
-#       -=          iAm     insert -+ symbol
+#       -+          iAm     insert -+ symbol
 #       !=          iAm     insert not equals symbol
 #       ~=          iAm     insert approximately equal symbol
 #       <=          iAm     insert less than or equal to symbol

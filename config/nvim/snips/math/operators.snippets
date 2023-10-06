@@ -34,11 +34,10 @@ snippet '^.*\)/' "() frac" "math() and not snip.visual_mode" ewrA
 stripped = match.string[:-1]
 depth = 0
 i = len(stripped) - 1
-while True:
+for i in range(i,-1,-1):
 	if stripped[i] == ')': depth += 1
 	if stripped[i] == '(': depth -= 1
 	if depth == 0: break;
-	i-=1
 snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}
 endsnippet
@@ -121,7 +120,7 @@ snippet eval "evaluated at" "math()" eiA
 endsnippet
 
 snippet "(?<!\\arc)(?<!\\(io|be))(?<![\\ah])(sin|cos|tan|csc|sec|cot)" "trig functions" "math()" eirA
-\\`!p snip.rv = match.group(1)`
+\\`!p snip.rv = match.group(2)`
 endsnippet
 
 snippet "a(sin|cos|tan|csc|sec|cot)" "arc trig function" "math()" eirA
