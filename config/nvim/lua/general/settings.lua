@@ -34,14 +34,15 @@ vim.opt.virtualedit = 'all'         -- move the cursor past the EOL
 vim.opt.spell = true                -- use spellchecking
 vim.opt.sps = 'best,5'              -- show 5 spelling suggestion ordered by 'best'
 vim.opt.spelllang = 'en_ca'         -- use Canadian English
-vim.opt.timeoutlen = 300            -- timeout for key mappings
+vim.opt.timeout = false             -- disable timeout
+vim.opt.timeoutlen = 100            -- timeout for key mappings
 
--- shorten timeoutlen in insert mode
+-- disable timeout in normal mode
 vim.api.nvim_create_autocmd({'InsertEnter'}, {
-    callback = function() vim.opt.timeoutlen = 100 end
+    callback = function() vim.opt.timeout = true end
 })
 vim.api.nvim_create_autocmd({'InsertLeave'}, {
-    callback = function() vim.opt.timeoutlen = 300 end
+    callback = function() vim.opt.timeout = false end
 })
 
 -- open help in new buffer

@@ -4,6 +4,7 @@ local silent = {silent = true}
 -- map leader to <space> (only possible as there are no imap <leader> commands
 vim.cmd 'let mapleader = " "'
 vim.keymap.set('x', '<leader>', '<nop>', noremap)
+vim.keymap.set('n', '<leader>', '<nop>', noremap)
 
 -- exit visual with return
 vim.keymap.set('x', '<cr>', '<esc>', noremap)
@@ -35,7 +36,7 @@ vim.keymap.set('n', '<leader>s', ':w<cr>', {silent = true, noremap = true})
 vim.keymap.set('n', '<tab>', ':bn<cr>', {silent = true, noremap = true})
 vim.keymap.set('n', '<s-tab>', ':bp<cr>', {silent = true, noremap = true})
 -- close buffer with <leader>q
-vim.keymap.set('n', '<leader>q', ':bd<cr>', {silent = true, noremap = true})
+vim.keymap.set('n', '<leader>q', ':bd<cr>', {noremap = true})
 
 -- <esc> to remove highlighting
 vim.keymap.set('n', '<esc>', ':noh<cr>', {silent = true, noremap = true})
