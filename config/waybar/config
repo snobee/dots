@@ -30,7 +30,7 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", ""],
+        "format-icons": ["󰃝", "󰃞", "󰃟", "󰃠"],
         "on-scroll-up": "light -A 1",
         "on-scroll-down": "light -U 1",
         "on-click": "zenity --title='Adjust Brightness' --scale --text=Brightness --value=$(light -G | sed -r 's/\\.[0-9]+//') --print-partial | while read line; do light -S $line; done",
@@ -41,7 +41,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+        "format-icons": ["󱃍", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip" : false,
     },
     "temperature": {
@@ -52,10 +52,10 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "None 睊",
+        "format-wifi": "{signalStrength}% 󰖩",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
+        "format-disconnected": "None 󰖪",
         "interval": 3,
         "on-click": "kitty iwctl"
     },
@@ -63,18 +63,18 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "󰆪 {icon} {format_source}",
+        "format-muted": "󰆪 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰂑",
+            "headset": "󰂑",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["奄", "奔", "墳"]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "zenity --title='Adjust Volume' --scale --text=Volume --value=$(pulseaudio-ctl full-status| sed -r 's/ .*//') --print-partial | while read line; do pulseaudio-ctl set $line; done"
     },
@@ -87,7 +87,7 @@
         "on-click": "rotate_screen.py -r 90"
     },
     "custom/quit": {
-        "format": "",
+        "format": "󰅙",
         "on-click": "swaymsg kill",
     },
     "custom/music": {
