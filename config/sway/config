@@ -1,5 +1,5 @@
 ### Variables
-set $mod Mod1
+set $mod Mod4
 set $left h
 set $down j
 set $up k
@@ -85,10 +85,10 @@ default_border none
 default_floating_border none
 
 ### borders
-border_images.focused           $HOME/.config/sway/shadows.png
-border_images.focused_inactive  $HOME/.config/sway/shadows.png
-border_images.unfocused         $HOME/.config/sway/shadows.png
-border_images.urgent            $HOME/.config/sway/shadows.png
+#border_images.focused           $HOME/.config/sway/shadows.png
+#border_images.focused_inactive  $HOME/.config/sway/shadows.png
+#border_images.unfocused         $HOME/.config/sway/shadows.png
+#border_images.urgent            $HOME/.config/sway/shadows.png
 
 ### default startup type
 for_window [app_id="zoom"] floating enable
