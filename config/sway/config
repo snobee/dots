@@ -17,6 +17,9 @@ exec killall flashfocus
 exec --no-startup-id flashfocus &
 
 ### Input configuration
+input "type:keyboard" {
+    xkb_options caps:escape
+}
 input "type:touchpad" {
     dwt disabled
     tap enabled

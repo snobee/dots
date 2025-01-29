@@ -8,10 +8,6 @@ vim.keymap.set('n', '<leader>', '<nop>', noremap)
 
 -- exit visual with return
 vim.keymap.set('x', '<cr>', '<esc>', noremap)
--- exit visual with j+k
-for _, map in ipairs {'jk', 'kj', 'Jk', 'KJ'} do
-    vim.keymap.set('i', map, '<esc>', noremap)
-end
 -- escape terminal with <esc>
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>', noremap)
 
@@ -86,7 +82,7 @@ local function set_comment(leader, filetypes)
         callback = function() vim.b.comment_leader = leader end
     })
 end
-set_comment('//', {'c', 'h', 'cpp', 'hpp', 'java', 'scala', 'rust'})
+set_comment('//', {'c', 'h', 'cpp', 'hpp', 'java', 'scala', 'rust', 'javascript'})
 set_comment('#', {'sh', 'ruby', 'python', 'conf', 'fstab', 'yaml'})
 set_comment('%', {'tex'})
 set_comment('"', {'vim'})

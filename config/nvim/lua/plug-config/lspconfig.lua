@@ -1,7 +1,21 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+lspconfig.roc_ls.setup{}
 lspconfig.pyright.setup {}
 lspconfig.rust_analyzer.setup {}
+lspconfig.tsserver.setup {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = '/home/sam/.npm-global/lib/@vue/typescript-plugin',
+        languages = { 'vue' },
+      },
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+}
+lspconfig.volar.setup {}
 
 
 -- Global mappings.

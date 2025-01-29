@@ -1,6 +1,7 @@
 vim.opt.hidden = true               -- Required to keep multiple buffers open multiple buffers
 vim.opt.wrap = true                 -- wrap text around the edge of the screen
 vim.opt.linebreak = true            -- text will not wrap inside a word
+vim.opt.breakindent = true          -- wrapped text will have the same indent
 vim.opt.encoding = 'utf-8'          -- The encoding displayed
 vim.opt.fileencoding = 'utf-8'      -- The encoding written to file
 vim.opt.pumheight = 10              -- Makes popup menu smaller
@@ -30,12 +31,18 @@ vim.opt.rnu = true                  -- ^^ todo ^^
 vim.opt.ignorecase = true           -- searches will be case insensitive
 vim.opt.smartcase = true            -- searches will be case insensitive unless uppercases are present
 vim.opt.conceallevel = 2            -- allow plugins to represent text with something else
+vim.opt.concealcursor = 'nc'
 vim.opt.virtualedit = 'all'         -- move the cursor past the EOL
 vim.opt.spell = true                -- use spellchecking
 vim.opt.sps = 'best,5'              -- show 5 spelling suggestion ordered by 'best'
 vim.opt.spelllang = 'en_ca'         -- use Canadian English
 vim.opt.timeout = false             -- disable timeout
 vim.opt.timeoutlen = 100            -- timeout for key mappings
+
+-- remove trailing whitespace on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+   command = ':%s/\\s\\+$//e'
+})
 
 -- disable timeout in normal mode
 vim.api.nvim_create_autocmd({'InsertEnter'}, {

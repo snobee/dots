@@ -25,9 +25,9 @@ zplug load
 # alias
 # ------------------------------------------------------------------------------
 if [ "$(uname)" = "Darwin" ]; then
-    alias ls="ls -lG"
+    alias ls="ls -lGh"
 elif [ "$(uname)" = "Linux" ]; then
-    alias ls="ls --color -l"
+    alias ls="ls --color -lh"
 fi
 alias la="ls -a"
 alias clear="printf \"\\033c\""

@@ -70,13 +70,13 @@ def create_row(snip):
 def create_item(snip):
 	line = snip.buffer[snip.line-1].strip()
 	snippet_body = ""
-	if match := re.match("([-\+\*][\\t ]+)\[[ x]\]", line):
+	if match := re.match(r"([-\+\*][\t ]+)\[[ x]\]", line):
 		snippet_body += match.group(1) + "[$1] $0"
-	if match := re.match("(>[\\t ]+)([-\+\*])", line):
+	if match := re.match(r"(>[\t ]+)([-\+\*])", line):
 		snippet_body += match.group(1) + match.group(2) +" $0"
 	elif len(line) > 0 and line[0] in '-*+':
 		snippet_body += line[0] + " "
-	elif match := re.match("(\\d+)\\.", line):
+	elif match := re.match(r"(\d+)\.", line):
 		snippet_body += str(int(match.group(1)) + 1) + ". "
 	else:
 		snippet_body += "ii"

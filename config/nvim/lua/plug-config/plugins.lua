@@ -7,12 +7,12 @@ if f == nil then
     local git_source = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     os.execute('curl -fLo ' .. autoload_file .. ' --create-dirs ' .. git_source)
     vim.api.nvim_create_autocmd({'VimEnter'}, {
-        callback = function() 
+        callback = function()
             vim.cmd.PlugInstall()
             vim.cmd.source '$MYVIMRC'
         end
     })
-else 
+else
     io.close(f)
 end
 
@@ -48,7 +48,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug('sainnhe/gruvbox-material', { branch = 'master' })
 
 -- ranger
-Plug('kevinhwang91/rnvimr', { branch = 'main' })
+-- Plug('kevinhwang91/rnvimr', { branch = 'main' })
+Plug 'lambdalisue/vim-fern'
 
 -- sneak
 Plug 'justinmk/vim-sneak'
@@ -61,4 +62,16 @@ Plug 'junegunn/goyo.vim'
 
 --.yuck filetype
 Plug 'elkowar/yuck.vim'
+
+-- neorg
+-- Plug 'nvim-neorg/neorg'
+-- Plug 'nvim-lua/plenary.nvim'
+-- Plug 'nvim-neorg/lua-utils.nvim'
+-- Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+
+-- wiki.vim
+Plug 'lervag/wiki.vim'
+
+-- table mode
+Plug 'dhruvasagar/vim-table-mode'
 vim.call 'plug#end'

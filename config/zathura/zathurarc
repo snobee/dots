@@ -42,3 +42,7 @@ set guioptions                  ""        # remove statusbar
 set adjust-open                 width     # open sized to width
 set recolor                     true      # recolor page
 set recolor-keephue             true      # colour images
+
+set first-page-column           1
+
+set database                    "sqlite"

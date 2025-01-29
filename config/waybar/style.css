@@ -124,23 +124,27 @@ window#waybar {
 }
 
 #backlight {
+    padding: 5px 10px 5px 7px;
     color: #d7af5f;
 }
 
 #network {
+    padding: 5px 10px 5px 7px;
     color: #87afd7;
 }
 
 #pulseaudio {
+    padding: 5px 10px 5px 7px;
     color: #d7afd7;
 }
 
 #custom-keyboard {
+    padding: 5px 10px 5px 7px;
     color: #afafd7;
 }
 
 #custom-rotate {
-    padding: 5px 5px 5px 7px;
+    padding: 5px 7px 5px 7px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     color: #d7af5f;
@@ -157,7 +161,7 @@ window#waybar {
     margin-right: 3px;
     margin-left: 3px;
     margin-bottom: 2px;
-    padding: 5px 7px 5px 7px;
+    padding: 5px 10px 5px 7px;
     border-radius: 8px;
     color: #d78787;
     box-shadow: 0 0 2px #000000;
