@@ -64,10 +64,23 @@
         ];
       };
 
-      nixosConfigurations.surface = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."surface" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit nixos-hardware; };
         system = "x86_64-linux";
         modules = [ ./hosts/surface.nix ];
+      };
+
+      homeConfigurations."sammi@desktop" = mkHomeConfiguration {
+        system = "x86_64-linux";
+        modules = [
+          ./home/dev.nix
+          ./home/hyprland.nix
+        ];
+      };
+
+      nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/desktop.nix ];
       };
     };
 }

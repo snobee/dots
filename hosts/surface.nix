@@ -6,7 +6,6 @@
     ../nixos
   ];
 
-  nixpkgs.config.allowUnfree = true;
   hardware.microsoft-surface.kernelVersion = "stable";
 
   environment.systemPackages = with pkgs; [
