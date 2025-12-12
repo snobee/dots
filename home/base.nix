@@ -13,16 +13,12 @@
     KI_EDITOR_KEYBOARD = "qwerty";
   };
 
-  programs.ghostty.enable = true;
-  programs.ghostty.settings.command = "fish";
-  programs.ghostty.enableFishIntegration = true;
-
   programs.fish.enable = true;
   programs.fish.interactiveShellInit = "set fish_greeting"; # disable greeting
 
   programs.yazi.enable = true;
   programs.yazi.settings = {
-    manager.ratio = [
+    mgr.ratio = [
       1
       2
       5

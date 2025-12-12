@@ -48,7 +48,7 @@
           extraSpecialArgs = { inherit system; };
           pkgs = pkgsForSystem system;
           modules = [
-            stylix.homeManagerModules.stylix
+            stylix.homeModules.stylix
             ./home
           ]
           ++ modules;
@@ -81,6 +81,16 @@
       nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/desktop.nix ];
+      };
+
+      homeConfigurations."sammi@air" = mkHomeConfiguration {
+        system = "aarch64-darwin";
+        modules = [
+          ./home/dev.nix
+          ./home/stats.nix
+          ./home/darwin.nix
+          ./home/ghostty.nix
+        ];
       };
     };
 }

@@ -6,7 +6,8 @@
 {
   home.packages = with pkgs; [
     python313
-    roc
+    git
+    # roc
     texlab
     tectonic
     lsp-ai
